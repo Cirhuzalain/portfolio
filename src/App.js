@@ -166,12 +166,13 @@ class App extends Component {
                       Engineer with strong passion and interest for machine
                       intelligence and it broader applications to improve our
                       society. I have extensively worked on several projects
-                      including but not limited to designing and implementing
-                      web and mobile applications using modern application
-                      architecture. Throughout my career I have worked with
-                      Python, Java and Javascript based framework. More recently
-                      I have started experimenting with training and evaluating
-                      deep networks (MLP,CNN,RNN, GAN, DDPG, ...)
+                      including but not limited to designing, implementing 
+                      and deploying web / mobile applications using modern 
+                      application architecture. 
+                      Throughout my career I have worked with Python, Java 
+                      and Javascript based framework. 
+                      More recently I have started experimenting with training and evaluating
+                      deep networks (MLP/FFNN, CNN, RNNs, GANs, DQN, DDPG, A3C,...)
                     </p>
                   </div>
                 </div>
