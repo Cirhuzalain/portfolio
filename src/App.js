@@ -16,6 +16,14 @@ import eleven from "./img/11.webp";
 import Navbar from "react-bootstrap/lib/Navbar";
 import Nav from "react-bootstrap/lib/Nav";
 import Card from "./Card";
+import ReactGA from 'react-ga';
+
+function initializeReactGA() {
+  ReactGA.initialize('UA-134246383-1');
+  ReactGA.pageview('/homepage');
+}
+
+initializeReactGA()
 
 class App extends Component {
   constructor(props) {
