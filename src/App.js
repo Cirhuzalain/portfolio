@@ -172,7 +172,7 @@ class App extends Component {
                   <div className="card col-md-12 col-md-offset-1">
                     <p className="text-muted">
                       Engineer with strong passion and interest for machine
-                      intelligence and it broader applications to improve our
+                      intelligence and its broader applications to improve our
                       society. I have extensively worked on several projects
                       including but not limited to designing, implementing 
                       and deploying web / mobile applications using modern 
