@@ -343,7 +343,7 @@ class App extends Component {
                   </span>
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/alain-cirhuza-34b49b80/"
+                  href="https://www.linkedin.com/in/mcalino/"
                   rel="noreferrer noopener"
                   target="_blank"
                 >
