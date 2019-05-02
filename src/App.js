@@ -300,10 +300,10 @@ class App extends Component {
                 />
                 <Card
                   data={{
-                    link: "https://recruitment.rightseat.rw",
-                    title: "Rightseat HR Tool",
-                    desc: "HR management platform",
-                    icon: "fa-briefcase",
+                    link: "https://ictchamber.rw/",
+                    title: "ICT Chamber MMS",
+                    desc: "A Membership Management System",
+                    icon: "fa-users",
                     n: 5
                   }}
                 />
