@@ -16,14 +16,14 @@ import eleven from "./img/11.webp";
 import Navbar from "react-bootstrap/lib/Navbar";
 import Nav from "react-bootstrap/lib/Nav";
 import Card from "./Card";
-import ReactGA from 'react-ga';
+import ReactGA from "react-ga";
 
 function initializeReactGA() {
-  ReactGA.initialize('UA-134246383-1');
+  ReactGA.initialize("UA-134246383-1");
   ReactGA.pageview(window.location.pathname + window.location.search);
 }
 
-initializeReactGA()
+initializeReactGA();
 
 class App extends Component {
   constructor(props) {
@@ -174,13 +174,13 @@ class App extends Component {
                       Engineer with strong passion and interest for machine
                       intelligence and its broader applications to improve our
                       society. I have extensively worked on several projects
-                      including but not limited to designing, implementing 
-                      and deploying web / mobile applications using modern 
-                      application architecture. 
-                      Throughout my career I have worked with Python, Java 
-                      and Javascript based framework. 
-                      More recently I have started experimenting with training and evaluating
-                      deep networks (MLP/FFNN, CNN, RNNs, GANs, DQN, DDPG, A3C,...)
+                      including but not limited to designing, implementing and
+                      deploying web / mobile applications using modern
+                      application architecture. Throughout my career I have
+                      worked with Python, Java and Javascript based framework.
+                      More recently I have started experimenting with training
+                      and evaluating deep networks (MLP/FFNN, CNN, RNNs, GANs,
+                      DQN, DDPG, A3C,...)
                     </p>
                   </div>
                 </div>
@@ -304,6 +304,17 @@ class App extends Component {
                     title: "ICT Chamber MMS",
                     desc: "A Membership Management System",
                     icon: "fa-users",
+                    n: 5
+                  }}
+                />
+              </div>
+              <div className="row row-second">
+                <Card
+                  data={{
+                    link: "https://recruitment.rightseat.rw/",
+                    title: "Right Seat HR Solution",
+                    desc: "A Human Resource Management Platform",
+                    icon: "fa-briefcase",
                     n: 5
                   }}
                 />
