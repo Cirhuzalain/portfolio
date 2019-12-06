@@ -13,8 +13,8 @@ import eight from "./img/8.webp";
 import nine from "./img/9.webp";
 import ten from "./img/10.webp";
 import eleven from "./img/11.webp";
-import Navbar from "react-bootstrap/lib/Navbar";
-import Nav from "react-bootstrap/lib/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
 import Card from "./Card";
 import ReactGA from "react-ga";
 
@@ -109,7 +109,7 @@ class App extends Component {
           <div className="intro">
             <h1>Hi There !</h1>
             <h1>I&apos;m Alino</h1>
-            <h2>Engineer | LifeLong Learner | ML Enthusiast</h2>
+            <h2>Engineer | LifeLong Learner</h2>
           </div>
           {window.mobilecheck() ? (
             <Particles
@@ -179,51 +179,13 @@ class App extends Component {
                       application architecture. Throughout my career I have
                       worked with Python, Java and Javascript based framework.
                       More recently I have started experimenting with training
-                      and evaluating deep networks (MLP/FFNN, CNN, RNNs, GANs,
-                      DQN, DDPG, A3C,...)
+                      and evaluating deep networks
                     </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
-        <section id="projects" className="section-project">
-          <section>
-            <h2 className="section-heading">Projects</h2>
-            <h3 className="section-subheading">React Nanodegree</h3>
-            <div className="container">
-              <div className="row">
-                <Card
-                  data={{
-                    link: "https://github.com/Cirhuzalain/MyRead",
-                    title: "BookShelf",
-                    desc: "A virtual bookshelf",
-                    icon: "fa-book",
-                    n: 3
-                  }}
-                />
-                <Card
-                  data={{
-                    link: "https://github.com/Cirhuzalain/readable",
-                    title: "Discussion App",
-                    desc: "A forum like web application",
-                    icon: "fa-comments",
-                    n: 3
-                  }}
-                />
-                <Card
-                  data={{
-                    link: "https://github.com/Cirhuzalain/UdaciCards",
-                    title: "Mobile Fashcard",
-                    desc: "A flash card like App",
-                    icon: "fa-mobile",
-                    n: 3
-                  }}
-                />
-              </div>
-            </div>
-          </section>
           <section>
             <h3 className="section-subheading">Deep Learning Nanodegree</h3>
             <div className="container">
@@ -295,26 +257,6 @@ class App extends Component {
                     title: "Buy From Women App",
                     desc: "A data collection app for farmer",
                     icon: "fa-female",
-                    n: 5
-                  }}
-                />
-                <Card
-                  data={{
-                    link: "https://ictchamber.rw/",
-                    title: "ICT Chamber MMS",
-                    desc: "A Membership Management System",
-                    icon: "fa-users",
-                    n: 5
-                  }}
-                />
-              </div>
-              <div className="row row-second">
-                <Card
-                  data={{
-                    link: "https://recruitment.rightseat.rw/",
-                    title: "Right Seat HR Solution",
-                    desc: "A Human Resource Management Platform",
-                    icon: "fa-briefcase",
                     n: 5
                   }}
                 />
