@@ -47,6 +47,8 @@ class App extends Component {
     this.divBackground = React.createRef();
     this.navInfo = React.createRef();
     this.counter = 0;
+    this.handleScroll = this.handleScroll.bind(this);
+    this.headerColorChange = this.headerColorChange.bind(this);
     window.mobilecheck = function() {
       var check = false;
       (function(a) {
@@ -62,6 +64,65 @@ class App extends Component {
       })(navigator.userAgent || navigator.vendor || window.opera);
       return check;
     };
+  }
+
+  /**
+   * Set CSS attribute based on IE or cureent modern Browser
+   */
+  setCustomStyle(){
+    if (!window.mobilecheck()) {
+      if (document.all) {
+        document
+          .getElementsByClassName("bg-dark")[0]
+          .setAttribute(
+            "cssText",
+            "background-color: #343a40 !important; box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12) !important;"
+          );
+      } else {
+        document
+          .getElementsByClassName("bg-dark")[0]
+          .setAttribute(
+            "style",
+            "background-color: #343a40 !important; box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12) !important"
+          );
+      }
+    }
+  };
+
+  /**
+   * Set CSS attribute based on IE or cureent modern Browser
+   */
+  unSetCustomStyle(){
+    if (!window.mobilecheck()) {
+      if (document.all) {
+        document
+          .getElementsByClassName("bg-dark")[0]
+          .setAttribute(
+            "cssText",
+            "background-color: transparent !important; box-shadow: unset"
+          );
+      } else {
+        document
+          .getElementsByClassName("bg-dark")[0]
+          .setAttribute(
+            "style",
+            "background-color: transparent !important; box-shadow: unset"
+          );
+      }
+    }
+  };
+
+  /**
+   * Change navbar behavior base on the window page offset
+   */
+  headerColorChange() {
+    const windowsScrollTop = window.pageYOffset;
+
+    if (windowsScrollTop > 875) {
+      this.setCustomStyle();
+    } else {
+      this.unSetCustomStyle();
+    }
   }
 
   componentDidMount() {
@@ -80,7 +141,14 @@ class App extends Component {
     window.removeEventListener("scroll", this.handleScroll);
   }
 
-  handleScroll(event) {}
+  handleScroll(event) {
+    if (!window.mobilecheck()) {
+      this.headerColorChange();
+    } else {
+      this.setCustomStyle();
+    }
+  }
+
   render() {
     return (
       <div ref={this.divBackground} className="main-content">

@@ -10,6 +10,13 @@ body {
   font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+.bg-dark {
+  background-color: transparent !important;
+}
+.navbar, .bg-dark {
+  box-shadow: unset !important;
+}
+
 p {
   text-align: justify;
   padding: 15px;
