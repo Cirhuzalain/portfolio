@@ -257,7 +257,7 @@ class App extends Component {
                       including but not limited to designing, implementing and
                       deploying web / mobile applications using modern
                       application architecture. Throughout his career, he
-                      worked with Python, Java and Javascript based framework.
+                      has worked with Python, Java and Javascript based framework.
                       More recently he started experimenting with training
                       and evaluating deep networks
                       </p>
