@@ -278,7 +278,7 @@ class App extends Component {
                     link: "https://github.com/Cirhuzalain/RFIDataset",
                     title: "News Dataset",
                     desc:
-                      "Crawled and scrapped over 19000 of web links from the swahili version of rfi using beautifulsoup and selenium",
+                      "Crawled and scraped over 19000 of web links from the swahili version of rfi using beautifulsoup and selenium",
                     icon: "fa-newspaper",
                     n: 3
                   }}
