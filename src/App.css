@@ -210,6 +210,13 @@ section {
     padding-left: 2rem;
   }
 }
+
+@media (min-width: 992px){
+  .col-md-offset-1 {
+    margin-left: 6.33333333%;
+  }
+}
+
 @keyframes changePadding {
   0% {
     padding-top: 12px;

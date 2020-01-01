@@ -13,9 +13,13 @@ import eight from "./img/8.webp";
 import nine from "./img/9.webp";
 import ten from "./img/10.webp";
 import eleven from "./img/11.webp";
+import avatar from "./img/alain.jpg";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Card from "./Card";
+import Cards from "./components/Card.js";
+import CardAvatar from "./components/CardAvatar.js";
+import CardBody from "./components/CardBody.js";
 import ReactGA from "react-ga";
 
 function initializeReactGA() {
@@ -176,7 +180,7 @@ class App extends Component {
         <div className="second-content">
           <div className="intro">
             <h1>Hi There !</h1>
-            <h1>I&apos;m Alino</h1>
+            <h1>I&apos;m Alain</h1>
             <h2>Engineer | LifeLong Learner</h2>
           </div>
           {window.mobilecheck() ? (
@@ -235,35 +239,78 @@ class App extends Component {
           <div className="container">
             <div className="row abouts">
               <div className="col-md-12">
-                <h2 className="section-heading">About</h2>
                 <div className="row">
-                  <div className="card col-md-12 col-md-offset-1">
-                    <p className="text-muted">
-                      Engineer with strong passion and interest for machine
-                      intelligence and its broader applications to improve our
-                      society. I have extensively worked on several projects
+                  <div className="col-md-12">
+                  <Cards profile style={{ boxShadow : '12px 15px 20px 0 rgba(46, 61, 73, 0.15)', 
+                                        borderRadius : '0.375rem', border : '1px solid rgba(0,0,0,.125)' }}>
+                    <CardAvatar profile>
+                      <a href="#alain" onClick={e => e.preventDefault()}>
+                        <img src={avatar} alt="..." />
+                      </a>
+                    </CardAvatar>
+                    <CardBody profile>
+                      <p className="text-muted">
+                      Alain is an engineer with strong passion and interest for machine
+                      learning and its broader applications to have societal impact. 
+                      he is currently undergoing the African Masters in Machine Intelligence (<a href="https://aimsammi.org/" rel="noreferrer noopener" target="_blank">AMMI</a>).  
+                      he has extensively worked on several projects
                       including but not limited to designing, implementing and
                       deploying web / mobile applications using modern
-                      application architecture. Throughout my career I have
+                      application architecture. Throughout his career, he
                       worked with Python, Java and Javascript based framework.
-                      More recently I have started experimenting with training
+                      More recently he started experimenting with training
                       and evaluating deep networks
-                    </p>
+                      </p>
+                    </CardBody>
+                  </Cards>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          
           <section>
-            <h3 className="section-subheading">Deep Learning Nanodegree</h3>
+            <h3 className="section-subheading">Projects</h3>
             <div className="container">
-              <div className="row">
+            <div className="row">
+                <Card
+                  data={{
+                    link: "https://github.com/Cirhuzalain/RFIDataset",
+                    title: "News Dataset",
+                    desc:
+                      "Crawled and scrapped over 19000 of web links from the swahili version of rfi using beautifulsoup and selenium",
+                    icon: "fa-newspaper",
+                    n: 3
+                  }}
+                />
+                <Card
+                  data={{
+                    link: "https://github.com/Cirhuzalain/Languagemodel",
+                    title: "Language Model",
+                    desc:
+                      "Generate realistic text from news article using a Reccurent Neural Network (RNN)",
+                    icon: "fa-language",
+                    n: 3
+                  }}
+                />
+                <Card
+                  data={{
+                    link: "https://github.com/Cirhuzalain/Word2vec",
+                    title: "Word2vec",
+                    desc:
+                      "Trained a word2vec model using skipgram and negative sampling using the news dataset",
+                    icon: "fa-project-diagram",
+                    n: 3
+                  }}
+                />
+              </div>
+              <div className="row row-second">
                 <Card
                   data={{
                     link: "https://github.com/Cirhuzalain/BikeSharePatterns",
                     title: "Bikeshare Prediction",
                     desc:
-                      "Predicting bikeshare patterns using a Feed Forward Neural Network (MLP)",
+                      "Predicting bikeshare patterns using a Feed Forward Neural Network (FFNN)",
                     icon: "fa-bicycle",
                     n: 3
                   }}
@@ -271,26 +318,14 @@ class App extends Component {
                 <Card
                   data={{
                     link:
-                      "https://github.com/Cirhuzalain/DogBreedClassification",
-                    title: "Dog breed classifier",
+                      "https://github.com/Cirhuzalain/SkinCancer",
+                    title: "Skin Cancer Analysis",
                     desc:
-                      "Classify dog breed for more than one hundreds categories using Convolution Neural Network (CNN)",
-                    icon: "fa-github-alt",
+                      "Classify different categories of skin cancer using a residual Network",
+                    icon: "fa-allergies",
                     n: 3
                   }}
                 />
-                <Card
-                  data={{
-                    link: "https://github.com/Cirhuzalain/TVScriptGeneration",
-                    title: "TV Script generation",
-                    desc:
-                      "Generate TV Script from sympson Text using a Reccurent Neural Network (RNN)",
-                    icon: "fa-television",
-                    n: 3
-                  }}
-                />
-              </div>
-              <div className="row row-second">
                 <Card
                   data={{
                     link: "https://github.com/Cirhuzalain/GenerateFaces",
@@ -301,17 +336,8 @@ class App extends Component {
                     n: 3
                   }}
                 />
-                <Card
-                  data={{
-                    link: "https://github.com/Cirhuzalain/QuadcopterDDPG",
-                    title: "Quadcopter Task",
-                    desc:
-                      "Teach a quadcopter to take off by using a Deep Deterministic Policy Gradients Algorithm (DDPG)",
-                    icon: "fa-plane",
-                    n: 3
-                  }}
-                />
               </div>
+              
             </div>
           </section>
           <section>
@@ -350,7 +376,7 @@ class App extends Component {
                 >
                   <span className="fa-stack fa-4x">
                     <i className="fa fa-circle fa-stack-2x text-primary" />
-                    <i className="fa fa-github-square fa-stack-1x fa-inverse" />
+                    <i className="fab fa-github-square fa-stack-1x fa-inverse" />
                   </span>
                 </a>
                 <a
@@ -360,7 +386,7 @@ class App extends Component {
                 >
                   <span className="fa-stack fa-4x">
                     <i className="fa fa-circle fa-stack-2x text-primary" />
-                    <i className="fa fa-twitter-square fa-stack-1x fa-inverse" />
+                    <i className="fab fa-twitter-square fa-stack-1x fa-inverse" />
                   </span>
                 </a>
                 <a
@@ -370,7 +396,7 @@ class App extends Component {
                 >
                   <span className="fa-stack fa-4x">
                     <i className="fa fa-circle fa-stack-2x text-primary" />
-                    <i className="fa fa-linkedin fa-stack-1x fa-inverse" />
+                    <i className="fab fa-linkedin fa-stack-1x fa-inverse" />
                   </span>
                 </a>
                 <a
@@ -380,7 +406,7 @@ class App extends Component {
                 >
                   <span className="fa-stack fa-4x">
                     <i className="fa fa-circle fa-stack-2x text-primary" />
-                    <i className="fa fa-medium fa-stack-1x fa-inverse" />
+                    <i className="fab fa-medium fa-stack-1x fa-inverse" />
                   </span>
                 </a>
               </div>
@@ -389,7 +415,7 @@ class App extends Component {
         </section>
         <footer className="page-footer font-small blue">
           <div className="footer-copyright text-center py-3">
-            © 2019 McAlino
+            © 2020 McAlino
           </div>
         </footer>
       </div>

@@ -6,7 +6,7 @@ const Card = props => {
       <a href={`${props.data.link}`} rel="noreferrer noopener" target="_blank">
         <span className="fa-stack fa-4x">
           <i className="fa fa-circle fa-stack-2x text-primary" />
-          <i className={`fa ${props.data.icon} fa-stack-1x fa-inverse`} />
+          <i className={`fas ${props.data.icon} fa-stack-1x fa-inverse`} />
         </span>
       </a>
       <h4 className="service-heading">{props.data.title}</h4>
