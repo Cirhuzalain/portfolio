@@ -298,7 +298,7 @@ class App extends Component {
                     link: "https://github.com/Cirhuzalain/Word2vec",
                     title: "Word2vec",
                     desc:
-                      "Trained a word2vec model using skipgram and negative sampling using the news dataset",
+                      "Trained a word2vec model with skipgram and negative sampling using the news dataset",
                     icon: "fa-project-diagram",
                     n: 3
                   }}
