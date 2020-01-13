@@ -268,7 +268,7 @@ class App extends Component {
             </div>
           </div>
           
-          <section id="#projects">
+          <section id="projects">
             <h3 className="section-subheading">Projects</h3>
             <div className="container">
             <div className="row">
