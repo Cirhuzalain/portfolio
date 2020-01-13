@@ -258,7 +258,7 @@ class App extends Component {
                       deploying web / mobile applications. Throughout his career, he
                       has worked with Python, Java and Javascript based framework.
                       More recently he started experimenting with training
-                      and evaluating deep networks
+                      and evaluating deep networks.
                       </p>
                     </CardBody>
                   </Cards>
@@ -268,7 +268,7 @@ class App extends Component {
             </div>
           </div>
           
-          <section>
+          <section id="#projects">
             <h3 className="section-subheading">Projects</h3>
             <div className="container">
             <div className="row">
