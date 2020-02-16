@@ -252,8 +252,8 @@ class App extends Component {
                       <p className="text-muted">
                       Alain is an engineer with strong passion and interest for machine
                       learning and its broader applications to have societal impact. 
-                      he is currently undergoing the African Masters in Machine Intelligence (<a href="https://aimsammi.org/" rel="noreferrer noopener" target="_blank">AMMI</a>).  
-                      he has extensively worked on several projects
+                      He is currently undergoing the African Masters in Machine Intelligence (<a href="https://aimsammi.org/" rel="noreferrer noopener" target="_blank">AMMI</a>).  
+                      He has extensively worked on several projects
                       including but not limited to designing, implementing and
                       deploying web / mobile applications. Throughout his career, he
                       has worked with Python, Java and Javascript based framework.
