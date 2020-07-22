@@ -400,16 +400,6 @@ class App extends Component {
                     <i className="fab fa-linkedin fa-stack-1x fa-inverse" />
                   </span>
                 </a>
-                <a
-                  href="https://medium.com/@mcalino"
-                  rel="noreferrer noopener"
-                  target="_blank"
-                >
-                  <span className="fa-stack fa-4x">
-                    <i className="fa fa-circle fa-stack-2x text-primary" />
-                    <i className="fab fa-medium fa-stack-1x fa-inverse" />
-                  </span>
-                </a>
               </div>
             </div>
           </div>
