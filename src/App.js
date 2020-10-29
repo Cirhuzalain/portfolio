@@ -277,9 +277,9 @@ class App extends Component {
                 <Card
                   data={{
                     link: "https://github.com/Cirhuzalain/RFIDataset",
-                    title: "News Dataset",
+                    title: "Multilingual news dataset",
                     desc:
-                      "Crawled and scraped over 19000 web links from the swahili version of rfi using beautiful soup and selenium",
+                      "Crawled and scraped over 1 000 000 web links from RFI, BBC, VOA and DW using  beautiful soup, stem and requests",
                     icon: "fa-newspaper",
                     n: 3
                   }}
