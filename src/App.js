@@ -276,7 +276,7 @@ class App extends Component {
             <div className="row">
                 <Card
                   data={{
-                    link: "https://github.com/Cirhuzalain/RFIDataset",
+                    link: "https://github.com/Cirhuzalain/CLSDemo",
                     title: "Multilingual news dataset",
                     desc:
                       "Crawled and scraped over 1000000 web links from RFI, BBC, VOA and DW using Requests, BeautifulSoup and Stem",
