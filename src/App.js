@@ -251,7 +251,7 @@ class App extends Component {
                     <CardBody profile>
                       <p className="text-muted">
                       Alain is an engineer with strong passion and interest for machine learning more broadly 
-                      and language understanding more specifically, its broader applications to have societal impact
+                      and Natural-language understanding more specifically, its broader applications to have societal impact
                       in the realm of questions pertaining to awareness, adaptation, robustness and monitoring (A2RM). 
                       He is currently undergoing the African Master's in Machine Intelligence 
                       (<a href="https://aimsammi.org/" rel="noreferrer noopener" target="_blank">AMMI</a>).  
@@ -259,7 +259,7 @@ class App extends Component {
                       including but not limited to designing, implementing and
                       deploying web / mobile applications. Throughout his career, he
                       has worked with Python, Java and Javascript based framework.
-                      More recently he started experimenting with training
+                      More recently he started experimenting with training 
                       and evaluating deep networks.
                       </p>
                     </CardBody>
