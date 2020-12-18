@@ -250,8 +250,8 @@ class App extends Component {
                     </CardAvatar>
                     <CardBody profile>
                       <p className="text-muted">
-                      Alain is an engineer with strong passion and interest for machine
-                      learning and its broader applications to have societal impact  
+                      Alain is an engineer with strong passion and interest for machine learning more broadly 
+                      and language understanding more specifically, its broader applications to have societal impact
                       in the realm of questions pertaining to awareness, adaptation, robustness and monitoring (A2RM). 
                       He is currently undergoing the African Master's in Machine Intelligence 
                       (<a href="https://aimsammi.org/" rel="noreferrer noopener" target="_blank">AMMI</a>).  
@@ -279,7 +279,7 @@ class App extends Component {
                     link: "https://github.com/Cirhuzalain/CLSDemo",
                     title: "Multilingual news dataset",
                     desc:
-                      "Crawled and scraped over 1000000 web links from RFI, BBC, VOA and DW using Requests, BeautifulSoup and Stem",
+                      "Retrieved and scraped over 1000000 web links from RFI, BBC, VOA and DW using Requests, BeautifulSoup and Stem",
                     icon: "fa-newspaper",
                     n: 3
                   }}
