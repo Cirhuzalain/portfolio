@@ -250,8 +250,8 @@ class App extends Component {
                     </CardAvatar>
                     <CardBody profile>
                       <p className="text-muted">
-                      Alain is an engineer with strong passion and interest for machine learning more broadly 
-                      and Natural-language understanding more specifically, its broader applications to have societal impact
+                      Alain is an engineer with strong passion and interest for Machine Learning more broadly 
+                      and Natural Language Understanding more specifically, its broader applications to have societal impact
                       in the realm of questions pertaining to awareness, adaptation, robustness and monitoring (A2RM). 
                       He is currently undergoing the African Master's in Machine Intelligence 
                       (<a href="https://aimsammi.org/" rel="noreferrer noopener" target="_blank">AMMI</a>).  
