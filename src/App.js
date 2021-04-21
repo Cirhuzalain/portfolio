@@ -245,7 +245,7 @@ class App extends Component {
                                         borderRadius : '0.375rem', border : '1px solid rgba(0,0,0,.125)' }}>
                     <CardAvatar profile>
                       <a href="#alain" onClick={e => e.preventDefault()}>
-                        <img src={avatar} alt="..." />
+                        <img src={avatar} alt="Profile Picture" />
                       </a>
                     </CardAvatar>
                     <CardBody profile>
