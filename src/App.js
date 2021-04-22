@@ -16,7 +16,7 @@ import eleven from "./img/11.webp";
 import avatar from "./img/alain.jpg";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import Card from "./Card";
+import Card from "./components/ProjectCard";
 import Cards from "./components/Card.js";
 import CardAvatar from "./components/CardAvatar.js";
 import CardBody from "./components/CardBody.js";
@@ -183,14 +183,13 @@ class App extends Component {
             <h1>I&apos;m Alain</h1>
             <h2>Engineer | LifeLong Learner</h2>
           </div>
-          {window.mobilecheck() ? (
             <Particles
               width="100vw"
               height="100vh"
               params={{
                 particles: {
                   number: {
-                    value: 20
+                    value: `${window.mobilecheck() ? (20):(150)}`
                   },
                   size: {
                     value: 4
@@ -206,31 +205,6 @@ class App extends Component {
                 }
               }}
             />
-          ) : (
-            <Particles
-              width="100vw"
-              height="100vh"
-              params={{
-                particles: {
-                  number: {
-                    value: 150
-                  },
-                  size: {
-                    value: 4
-                  }
-                },
-                interactivity: {
-                  events: {
-                    onhover: {
-                      enable: true,
-                      mode: "repulse"
-                    }
-                  }
-                }
-              }}
-            />
-          )}
-
           <a href="#abouts" className="scroll">
             <img src={down} alt="navigation" />
           </a>
@@ -245,7 +219,7 @@ class App extends Component {
                                         borderRadius : '0.375rem', border : '1px solid rgba(0,0,0,.125)' }}>
                     <CardAvatar profile>
                       <a href="#alain" onClick={e => e.preventDefault()}>
-                        <img src={avatar} alt="Profile Picture" />
+                        <img src={avatar} alt="" />
                       </a>
                     </CardAvatar>
                     <CardBody profile>
