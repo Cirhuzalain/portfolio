@@ -7,7 +7,7 @@ You need to have nodejs and npm install on your computer to run the project. If 
 You can clone the repository with `git clone https://github.com/Cirhuzalain/portfolio`
 After cloning the project use `cd portfolio`
 
-## Install Dependency
+## Install Dependencies
 Use `npm install` command
 
 ## Run the project
