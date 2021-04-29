@@ -15,7 +15,6 @@ Use `npm start` command
 
 ## Built with
 * ReactJS
-* React Router
 * React Bootstrap
 * React GA
 * Particles JS
