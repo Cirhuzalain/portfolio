@@ -189,10 +189,13 @@ class App extends Component {
               params={{
                 particles: {
                   number: {
-                    value: `${window.mobilecheck() ? (20):(150)}`
+                    value: `${window.mobilecheck() ? (20):(130)}`,
                   },
                   size: {
                     value: 4
+                  },
+                  move : {
+                    speed : 1.5
                   }
                 },
                 interactivity: {
@@ -227,8 +230,8 @@ class App extends Component {
                       Alain is an engineer with strong passion and interest for Machine Learning more broadly 
                       and Natural Language Understanding more specifically, its broader applications to have societal impact
                       in the realm of questions pertaining to awareness, adaptation, robustness and monitoring (A2RM). 
-                      He is currently undergoing the African Master's in Machine Intelligence 
-                      (<a href="https://aimsammi.org/" rel="noreferrer noopener" target="_blank">AMMI</a>).  
+                      He previously completed his Msc. in Machine Learning at the African Master's in Machine Intelligence 
+                      (<a href="https://aimsammi.org/" rel="noreferrer noopener" target="_blank">AIMS-AMMI</a>).  
                       He has extensively worked on several projects
                       including but not limited to designing, implementing and
                       deploying web / mobile applications. Throughout his career, he
