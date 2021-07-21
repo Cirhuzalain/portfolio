@@ -236,8 +236,8 @@ class App extends Component {
                       including but not limited to designing, implementing and
                       deploying web / mobile applications. Throughout his career, he
                       has worked with Python, Java and Javascript based framework.
-                      More recently he started experimenting with training 
-                      and evaluating deep networks.
+                      More recently, he started experimenting with training and evaluating 
+                      the properties of the representation learned by deep networks.
                       </p>
                     </CardBody>
                   </Cards>
