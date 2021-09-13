@@ -235,7 +235,7 @@ class App extends Component {
                       He has extensively worked on several projects
                       including but not limited to designing, implementing and
                       deploying web / mobile applications. Throughout his career, he
-                      has worked with Python, Java and Javascript based framework.
+                      has worked with Python, Java, Golang and Javascript based framework.
                       More recently, he started experimenting with training and evaluating 
                       the properties of the representation learned by deep networks.
                       </p>
