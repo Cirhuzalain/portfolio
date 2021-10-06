@@ -13,7 +13,7 @@ import eight from "./img/8.webp";
 import nine from "./img/9.webp";
 import ten from "./img/10.webp";
 import eleven from "./img/11.webp";
-import avatar from "./img/alain.jpg";
+import avatar from "./img/alain.jpeg";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Card from "./components/ProjectCard";
