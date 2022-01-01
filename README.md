@@ -4,8 +4,8 @@
 You need to have nodejs and npm install on your computer to run the project. If not you can download them using this [link](https://nodejs.org/en/download/)
 
 ## Clone the project
-You can clone the repository with `git clone https://github.com/Cirhuzalain/portfolio`
-After cloning the project use `cd portfolio`
+You can clone the repository with `git clone https://github.com/Cirhuzalain/Website.git`
+After cloning the project use `cd Website`
 
 ## Install Dependencies
 Use `npm install` command
