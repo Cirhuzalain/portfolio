@@ -146,6 +146,10 @@ section {
   padding: 30px;
 }
 
+#tsparticles canvas {
+  position: unset !important;
+}
+
 .section-project::before {
   content: "";
   width: 100%;

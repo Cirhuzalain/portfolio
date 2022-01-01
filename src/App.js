@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import Particles from "react-particles-js";
+import Particles from "react-tsparticles";
 import down from "./img/arrow.svg";
 import one from "./img/1.webp";
 import two from "./img/2.webp";
@@ -186,7 +186,7 @@ class App extends Component {
             <Particles
               width="100vw"
               height="100vh"
-              params={{
+              options={{
                 particles: {
                   number: {
                     value: `${window.mobilecheck() ? (20):(130)}`,
@@ -194,18 +194,54 @@ class App extends Component {
                   size: {
                     value: 4
                   },
-                  move : {
-                    speed : 1.5
-                  }
+                  links: {
+                    color: "#ffffff",
+                    distance: 150,
+                    enable: true,
+                    opacity: 0.5,
+                    width: 1,
+                  },
+                  collisions: {
+                    enable: true,
+                  },
+                  move: {
+                    direction: "none",
+                    enable: true,
+                    outMode: "bounce",
+                    random: false,
+                    speed: 1.5,
+                    straight: false,
+                  },
                 },
                 interactivity: {
                   events: {
-                    onhover: {
+                    onClick: {
                       enable: true,
-                      mode: "repulse"
-                    }
-                  }
-                }
+                      mode: "push",
+                    },
+                    onHover: {
+                      enable: true,
+                      mode: "repulse",
+                    },
+                    resize: true,
+                  },
+                  modes: {
+                    bubble: {
+                      distance: 400,
+                      duration: 2,
+                      opacity: 0.8,
+                      size: 40,
+                    },
+                    push: {
+                      quantity: 4,
+                    },
+                    repulse: {
+                      distance: 200,
+                      duration: 0.4,
+                    },
+                  },
+                },
+                detectRetina: true,
               }}
             />
           <a href="#abouts" className="scroll">
@@ -318,23 +354,6 @@ class App extends Component {
               
             </div>
           </section>
-          <section>
-            <h3 className="section-subheading">Miscellaneous</h3>
-            <div className="container">
-              <div className="row">
-                <Card
-                  data={{
-                    link:
-                      "https://play.google.com/store/apps/details?id=com.nijus.alino.bfwcoopmanagement",
-                    title: "Buy From Women App",
-                    desc: "A data collection app for farmer",
-                    icon: "fa-female",
-                    n: 5
-                  }}
-                />
-              </div>
-            </div>
-          </section>
         </section>
         <section id="contacts" className="section-contact">
           <h2 className="section-heading">Contacts</h2>
@@ -383,7 +402,7 @@ class App extends Component {
         </section>
         <footer className="page-footer font-small blue">
           <div className="footer-copyright text-center py-3">
-            © 2021 McAlino
+            © 2022 McAlino
           </div>
         </footer>
       </div>
