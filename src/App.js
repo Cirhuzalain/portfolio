@@ -181,7 +181,7 @@ class App extends Component {
           <div className="intro">
             <h1>Hi There !</h1>
             <h1>I&apos;m Alain</h1>
-            <h2>Engineer | LifeLong Learner</h2>
+            <h2>Software Engineer | LifeLong Learner</h2>
           </div>
             <Particles
               width="100vw"
@@ -263,9 +263,10 @@ class App extends Component {
                     </CardAvatar>
                     <CardBody profile>
                       <p className="text-muted">
-                      Alain is an engineer with strong passion and interest for Machine Learning more broadly 
+	              <!-- Review  -->
+                      Alain is a software engineer with strong passion and interest for Machine Learning more broadly 
                       and Natural Language Understanding more specifically, its broader applications to have societal impact
-                      in the realm of questions pertaining to awareness, adaptation, robustness and monitoring (A2RM). 
+                      in the realm of questions pertaining to awareness, adaptation, robustness, fairness and monitoring (A2RM | MA2RF). 
                       He previously completed his M.Sc. in Machine Learning at the African Master's in Machine Intelligence 
                       (<a href="https://aimsammi.org/" rel="noreferrer noopener" target="_blank">AIMS-AMMI</a>).  
                       He has extensively worked on several projects
@@ -284,6 +285,7 @@ class App extends Component {
           </div>
           
           <section id="projects">
+	    <!-- Review -->
             <h3 className="section-subheading">Projects</h3>
             <div className="container">
             <div className="row">
