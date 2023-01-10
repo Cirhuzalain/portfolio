@@ -404,7 +404,7 @@ class App extends Component {
         </section>
         <footer className="page-footer font-small blue">
           <div className="footer-copyright text-center py-3">
-            © 2022 McAlino
+            © 2023 McAlino
           </div>
         </footer>
       </div>
