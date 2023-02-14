@@ -184,6 +184,10 @@ section {
   color: rgba(255, 255, 255, 1);
 }
 
+h3.MuiTypography-root.imageTitle.MuiTypography-h6.MuiTypography-colorInherit {
+  color : white;
+}
+
 @media (max-width: 600px) {
   .card {
     margin: 25px;
