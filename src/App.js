@@ -266,12 +266,11 @@ class App extends Component {
                       Alain is a software engineer with strong passion and interest for Machine Learning more broadly 
                       and Natural Language Understanding more specifically, its broader applications to have societal impact
                       in the realm of questions pertaining to awareness, adaptation, robustness, fairness and monitoring (A2RM | MA2RF). 
-                      He previously completed his M.Sc. in Machine Learning at the African Master's in Machine Intelligence 
-                      (<a href="https://aimsammi.org/" rel="noreferrer noopener" target="_blank">AIMS-AMMI</a>).
+                      He previously spent some time at <a href="https://aimsammi.org/" rel="noreferrer noopener" target="_blank">AIMS</a> thinking about the foundation of Machine Intelligence.
                       He has extensively worked on several projects
                       including but not limited to designing, implementing and
                       deploying web / mobile applications. Throughout his career, he
-                      has worked with Python, Java, Golang and Javascript based framework.
+                      has worked with Python, Golang, Rust, C++, Java and Javascript based framework.
                       More recently, he started experimenting with training and evaluating 
                       the properties of the representation learned by deep networks.
                       </p>
