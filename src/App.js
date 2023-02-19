@@ -189,7 +189,7 @@ class App extends Component {
               options={{
                 particles: {
                   number: {
-                    value: `${window.mobilecheck() ? (20):(130)}`,
+                    value: `${window.mobilecheck() ? (20):(100)}`,
                   },
                   size: {
                     value: 4
@@ -263,7 +263,7 @@ class App extends Component {
                     </CardAvatar>
                     <CardBody profile>
                       <p className="text-muted">
-                      Alain is a software engineer with strong passion and interest for Machine Learning more broadly 
+                      Alain is a Software Engineer with strong passion and interest for Machine Learning more broadly
                       and Natural Language Understanding more specifically, its broader applications to have societal impact
                       in the realm of questions pertaining to awareness, adaptation, robustness, fairness and monitoring (A2RM | MA2RF). 
                       He previously spent some time at <a href="https://aimsammi.org/" rel="noreferrer noopener" target="_blank">AIMS</a> thinking about the foundation of Machine Intelligence.
