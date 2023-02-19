@@ -188,7 +188,11 @@ export default function App() {
               options={{
                 particles: {
                   number: {
+<<<<<<< HEAD
                     value: `${checkMobile() ? (20):(80)}`,
+=======
+                    value: `${window.mobilecheck() ? (20):(100)}`,
+>>>>>>> 71a3d1a (Update about section)
                   },
                   size: {
                     value: 4
