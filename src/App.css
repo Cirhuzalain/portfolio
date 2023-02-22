@@ -208,6 +208,11 @@ h3.MuiTypography-root.imageTitle.MuiTypography-h6.MuiTypography-colorInherit {
   .col-md-offset-1 {
     margin-left: 8.33333333%;
   }
+
+  .about {
+    margin : unset;
+  }
+
   .navbar-nav .nav-link {
     padding-right: 2rem;
     padding-left: 2rem;
@@ -220,9 +225,7 @@ h3.MuiTypography-root.imageTitle.MuiTypography-h6.MuiTypography-colorInherit {
 }
 
 @media (min-width: 992px){
-  .col-md-offset-1 {
-    margin-left: 6.33333333%;
-  }
+
 }
 
 @keyframes changePadding {
