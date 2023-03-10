@@ -189,7 +189,7 @@ class App extends Component {
               options={{
                 particles: {
                   number: {
-                    value: `${window.mobilecheck() ? (20):(100)}`,
+                    value: `${window.mobilecheck() ? (20):(75)}`,
                   },
                   size: {
                     value: 4
