@@ -5,7 +5,7 @@ import ButtonBase from '@material-ui/core/ButtonBase';
 import Container from '@material-ui/core/Container';
 import Typography from './Typography.js';
 
-// Componenent from : https://mui.com/store/items/onepirate/
+// Component from : https://mui.com/store/items/onepirate/
 
 const ImageBackdrop = styled('div')(({ theme }) => ({
   position: 'absolute',
