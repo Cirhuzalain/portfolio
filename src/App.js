@@ -20,14 +20,6 @@ import Cards from "./components/Card.js";
 import CardAvatar from "./components/CardAvatar.js";
 import ProjectDetails from "./components/ProjectDetails.js";
 import CardBody from "./components/CardBody.js";
-import ReactGA from "react-ga";
-
-function initializeReactGA() {
-  ReactGA.initialize("UA-134246383-1");
-  ReactGA.pageview(window.location.pathname + window.location.search);
-}
-
-initializeReactGA();
 
 class App extends Component {
   constructor(props) {
