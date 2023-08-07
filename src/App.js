@@ -257,7 +257,7 @@ class App extends Component {
                       <p className="text-muted">
                       Alain is a Software Engineer with strong passion and interest for Machine Learning more broadly
                       and Natural Language Understanding more specifically, its broader applications to have societal impact
-                      in the realm of questions pertaining to awareness, adaptation, robustness, fairness, monitoring, ... (A2RM | MA2RF, ...).
+                      in the realm of questions pertaining to awareness, adaptation, robustness, fairness, explainability, security, privacy, monitoring, ... (M^3A2RFESPLP, ...).
                       He previously spent some time at <a href="https://aimsammi.org/" rel="noreferrer noopener" target="_blank">AIMS</a> thinking about the foundation of Machine Intelligence.
                       He has extensively worked on several projects
                       including but not limited to designing, implementing and
