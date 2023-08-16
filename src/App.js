@@ -201,7 +201,7 @@ class App extends Component {
                     enable: true,
                     outMode: "bounce",
                     random: false,
-                    speed: 1.5,
+                    speed: 0.9,
                     straight: false,
                   },
                 },
