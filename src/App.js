@@ -145,6 +145,8 @@ class App extends Component {
     }
   }
 
+  handleSubmit(){}
+
   render() {
     return (
       <div ref={this.divBackground} className="main-content">
@@ -166,6 +168,26 @@ class App extends Component {
               <Nav.Link href="#abouts">About</Nav.Link>
               <Nav.Link href="#projects">Projects</Nav.Link>
               <Nav.Link href="#contacts">Contacts</Nav.Link>
+              <Nav.Link
+                 href="https://github.com/Cirhuzalain"
+                 rel="noreferrer noopener"
+                 target="_blank"
+              >
+                <span className="fa-stack fa-1x">
+                    <i className="fa fa-circle fa-stack-2x text-primary" />
+                    <i className="fab fa-github fa-stack-2x fa-inverse" />
+                </span>
+              </Nav.Link>
+              <Nav.Link
+                href="https://twitter.com/cirhuzalain"
+                rel="noreferrer noopener"
+                target="_blank"
+              >
+                <span className="fa-stack fa-1x">
+                    <i className="fa fa-circle fa-stack-2x text-primary" />
+                    <i className="fab fa-twitter fa-stack-2x fa-inverse" />
+                </span>
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
@@ -288,42 +310,31 @@ class App extends Component {
           <div className="container">
             <div className="row">
               <div className="about card col-md-12 col-md-offset-1">
-                <a href="mailto:cirhuzalain@gmail.com">
-                  <span className="fa-stack fa-4x">
-                    <i className="fa fa-circle fa-stack-2x text-primary" />
-                    <i className="fa fa-envelope fa-stack-1x fa-inverse" />
-                  </span>
-                </a>
-                <a
-                  href="https://github.com/Cirhuzalain"
-                  rel="noreferrer noopener"
-                  target="_blank"
-                >
-                  <span className="fa-stack fa-4x">
-                    <i className="fa fa-circle fa-stack-2x text-primary" />
-                    <i className="fab fa-github-square fa-stack-1x fa-inverse" />
-                  </span>
-                </a>
-                <a
-                  href="https://twitter.com/cirhuzalain"
-                  rel="noreferrer noopener"
-                  target="_blank"
-                >
-                  <span className="fa-stack fa-4x">
-                    <i className="fa fa-circle fa-stack-2x text-primary" />
-                    <i className="fab fa-twitter-square fa-stack-1x fa-inverse" />
-                  </span>
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/mcalino/"
-                  rel="noreferrer noopener"
-                  target="_blank"
-                >
-                  <span className="fa-stack fa-4x">
-                    <i className="fa fa-circle fa-stack-2x text-primary" />
-                    <i className="fab fa-linkedin fa-stack-1x fa-inverse" />
-                  </span>
-                </a>
+
+                <div className="mb-3">
+                    <label htmlFor="userNames" className="form-label">Names</label>
+                    <input id="userNames" type="text" className="form-control" placeholder="Alain M. Cirhuza" />
+                </div>
+
+                <div className="mb-3">
+                    <label htmlFor="userEmail" className="form-label">Email</label>
+                    <input id="userEmail" type="email" className="form-control" placeholder="alain@mcalino.com" />
+                </div>
+
+                <div className="mb-3">
+                    <label htmlFor="userPhoneNumber" className="form-label">Phone Number</label>
+                    <input id="userPhoneNumber" type="phone" className="form-control" placeholder="+1 222 333 9999" />
+                </div>
+
+                <div className="mb-3">
+                    <label htmlFor="userMessage" className="form-label">Message</label>
+                    <textarea id="userMessage" type="text" className="form-control" placeholder="Hello ..." rows="6"></textarea>
+                </div>
+
+                <div className="mb-3">
+                    <button id="submitButton" type="submit" className="btn btn-primary">Submit</button>
+                </div>
+
               </div>
             </div>
           </div>

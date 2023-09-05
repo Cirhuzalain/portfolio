@@ -12,7 +12,7 @@
 # limitations under the License.
 
 # [START app_yaml]
-runtime: nodejs14
+runtime: nodejs20
 handlers:
   - url: /
     static_files: build/index.html
