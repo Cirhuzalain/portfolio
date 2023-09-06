@@ -145,7 +145,10 @@ class App extends Component {
     }
   }
 
-  handleSubmit(){}
+  handleSubmit(){
+    // Process data
+    // Send data with fect API or Vanilla AJAX
+  }
 
   render() {
     return (
@@ -323,7 +326,7 @@ class App extends Component {
 
                 <div className="mb-3">
                     <label htmlFor="userPhoneNumber" className="form-label">Phone Number</label>
-                    <input id="userPhoneNumber" type="phone" className="form-control" placeholder="+1 222 333 9999" />
+                    <input id="userPhoneNumber" type="phone" className="form-control" placeholder="+1 222 333 3535" />
                 </div>
 
                 <div className="mb-3">
