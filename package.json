@@ -18,10 +18,10 @@
     "react-tsparticles": "^1.38.0"
   },
   "scripts": {
-    "build:client": "esbuild src/index.js --bundle --outfile=dist/bundle.js --loader:.js=jsx",
-    "build:server": "esbuild backend/server.jsx --bundle --outfile=build/server.js --platform=node",
+    "build:client": "esbuild src/index.js --bundle --outfile=dist/bundle.js --loader:.js=jsx  --loader:.jpeg=dataurl --loader:.webp=dataurl --loader:.svg=dataurl",
+    "build:server": "esbuild backend/server.jsx --bundle --outfile=build/server.js --platform=node  --loader:.jpeg=dataurl --loader:.webp=dataurl --loader:.svg=dataurl",
     "build": "npm run build:client && npm run build:server",
-    "start": "node backend/server.js"
+    "start": "node build/server.js"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { styled } from '@material-ui/core/styles';
-import Box from '@material-ui/core/Box';
-import ButtonBase from '@material-ui/core/ButtonBase';
-import Container from '@material-ui/core/Container';
-import Typography from './Typography.js';
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import ButtonBase from '@mui/material/ButtonBase';
+import Container from '@mui/material/Container';
+import Typography from './Typography.jsx';
 
 // Component from : https://mui.com/store/items/onepirate/
 

@@ -1,9 +1,8 @@
 import React from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
-import { makeStyles } from "@material-ui/core/styles";
-
-import styles from "./cardAvatarStyle.js";
+import { makeStyles } from "@mui/material/styles";
+import styles from "./cardAvatarStyle.jsx";
 
 const useStyles = makeStyles(styles);
 

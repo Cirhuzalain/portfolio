@@ -1,4 +1,4 @@
-import { createTheme } from '@material-ui/styles';
+import { createTheme } from '@mui/material/styles';
 import { green, grey, red } from '@mui/material/colors';
 
 const rawTheme = createTheme({
