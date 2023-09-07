@@ -1,4 +1,4 @@
-import { hexToRgb, blackColor } from "./colors.js";
+import { hexToRgb, blackColor } from "./colors.jsx";
 
 const cardAvatarStyle = {
   cardAvatar: {

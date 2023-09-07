@@ -2,7 +2,7 @@ import {
     blackColor,
     whiteColor,
     hexToRgb
-  } from "./colors.js";
+  } from "./colors.jsx";
   
   const cardStyle = {
     card: {

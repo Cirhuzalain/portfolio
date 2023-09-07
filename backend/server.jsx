@@ -2,17 +2,14 @@ import path from "path";
 import fs from "fs";
 import express from "express";
 import React from "react";
-import ReactDOMSever from "react-dom/server";
+import {renderToPipeableStream} from "react-dom/server";
 import sgMail from "@sendgrid/mail";
-import App from "../src/App.js";
+import App from "../src/App.jsx";
 
 const app = express();
 // sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
-// Handle assets (build/), GCS and App engine yaml config file, Add / Review esbuild loader for static assets
-app.use(
-    express.static(path.resolve(__dirname, ".", "dist"), {maxAge : "1d"})
-);
+// Handle assets (build/), GCS and App engine yaml config file, Review project dependencies
 // app.user(express.static("public"));
 // app.user(express.static("build/static"));
 
@@ -20,19 +17,26 @@ const port = process.env.PORT || 9000;
 
 app.get("/", (req, res) => {
     // Return home page
-    fs.readFile(path.resolve("./public/index.html", "utf-8", (error, data) => {
-        if (error) {
-            console.error(error)
+    const {pipe} = renderToPipeableStream(<App />, {
+        bootstrapScripts : [],
+        onShellReady(){
+            response.setHeader('content-type', 'text/html')
+        }
+    });
+
+    fs.readFile(path.resolve("./public/index.html"), "utf8", (err, data) => {
+        if (err) {
+            console.error(err)
             return res.status(500).send("Failed to load index.html")
         }
 
         return res.send(
             data.replace(
                 "<div id='root'></div>",
-                `<div id="root">${ReactDOMSever.renderToString(<App />)}</div>`
+                `<div id="root">${pipe}</div>`
             )
         );
-    }));
+    });
 });
 
 app.post("/contact", (req, res) => {
@@ -47,6 +51,10 @@ app.post("/contact", (req, res) => {
     // const message = {to : "contact@mcalino.com", from : "alain@mcalino.com", subject : "Message from ...", text: "Hello ..."}
     // sgMail.send(message)
 });
+
+app.use(
+    express.static(path.resolve(__dirname, ".", "dist"), {maxAge : "1d"})
+);
 
 app.listen(port, () => {
     console.log(`App listening on port ${port}`)

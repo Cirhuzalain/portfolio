@@ -16,10 +16,10 @@ import eleven from "./img/11.webp";
 import avatar from "./img/alain.jpeg";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import Cards from "./components/Card.js";
-import CardAvatar from "./components/CardAvatar.js";
-import ProjectDetails from "./components/ProjectDetails.js";
-import CardBody from "./components/CardBody.js";
+import Cards from "./components/Card.jsx";
+import CardAvatar from "./components/CardAvatar.jsx";
+import ProjectDetails from "./components/ProjectDetails.jsx";
+import CardBody from "./components/CardBody.jsx";
 
 class App extends Component {
   constructor(props) {
