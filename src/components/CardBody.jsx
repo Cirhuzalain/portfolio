@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
-import { makeStyles } from "@mui/material/styles";
+import makeStyles from "@mui/styles/makeStyles";
 import styles from "./cardBodyStyle.jsx";
 
 const useStyles = makeStyles(styles);

@@ -9,16 +9,18 @@ import App from "../src/App.jsx";
 const app = express();
 // sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
-// Handle assets (build/), GCS and App engine yaml config file, Review project dependencies
-// app.user(express.static("public"));
-// app.user(express.static("build/static"));
+// Handle assets (build/), GCS and App engine yaml config file
+// Update / Refactor App.jsx to match current React docs version & books / seminar
 
-const port = process.env.PORT || 9000;
+// app.use(express.static("public"));
+// app.use(express.static("build/static"));
+
+const port = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
     // Return home page
     const {pipe} = renderToPipeableStream(<App />, {
-        bootstrapScripts : [],
+        bootstrapScripts : ["dist/bundle.js"],
         onShellReady(){
             response.setHeader('content-type', 'text/html')
         }
@@ -37,6 +39,14 @@ app.get("/", (req, res) => {
             )
         );
     });
+});
+
+app.get("/seminar", (req, res) => {
+    // Return seminar details
+});
+
+app.get("/books", (req, res) => {
+    // Return books list
 });
 
 app.post("/contact", (req, res) => {
@@ -58,4 +68,4 @@ app.use(
 
 app.listen(port, () => {
     console.log(`App listening on port ${port}`)
-})
+});
