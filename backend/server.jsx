@@ -5,6 +5,8 @@ import React from "react";
 import {renderToPipeableStream} from "react-dom/server";
 import sgMail from "@sendgrid/mail";
 import App from "../src/App.jsx";
+import Books from "../src/components/Books.jsx";
+import Seminar from "../src/components/Seminar.jsx";
 
 const app = express();
 // sgMail.setApiKey(process.env.SENDGRID_API_KEY)
@@ -17,16 +19,9 @@ const app = express();
 
 const port = process.env.PORT || 3000;
 
-app.get("/", (req, res) => {
-    // Return home page
-    const {pipe} = renderToPipeableStream(<App />, {
-        bootstrapScripts : ["dist/bundle.js"],
-        onShellReady(){
-            response.setHeader('content-type', 'text/html')
-        }
-    });
-
-    fs.readFile(path.resolve("./public/index.html"), "utf8", (err, data) => {
+function getPageContent(file_name, pipe, res){
+    // Review fs readFile
+     fs.readFile(path.resolve(file_name), "utf8", (err, data) => {
         if (err) {
             console.error(err)
             return res.status(500).send("Failed to load index.html")
@@ -38,15 +33,45 @@ app.get("/", (req, res) => {
                 `<div id="root">${pipe}</div>`
             )
         );
+     });
+}
+
+app.get("/", (req, res) => {
+    // Return home page
+    const {pipe} = renderToPipeableStream(<App />, {
+        bootstrapScripts : ["dist/bundle.js"],
+        onShellReady(){
+            res.setHeader('content-type', 'text/html');
+            // Swapping DOM Node & get index.html initial content
+            // let data = getPageContent("./public/index.html", pipe, res);
+            // data.replace("<div id='root'></div>", `<div id="root">${res}</div>`);
+            pipe(res);
+        }
     });
 });
 
 app.get("/seminar", (req, res) => {
     // Return seminar details
+    const {pipe} = renderToPipeableStream(<Seminar />, {
+        bootstrapScripts : ["dist/bundle.js"],
+        onShellReady(){
+            res.setHeader('content-type', 'text/html');
+        }
+    });
+
+   return getPageContent("./public/index.html", pipe, res);
 });
 
 app.get("/books", (req, res) => {
     // Return books list
+    const {pipe} = renderToPipeableStream(<Books />, {
+            bootstrapScripts : ["dist/bundle.js"],
+            onShellReady(){
+                res.setHeader('content-type', 'text/html');
+            }
+    });
+
+   return getPageContent("./public/index.html", pipe, res);
 });
 
 app.post("/contact", (req, res) => {
@@ -60,6 +85,7 @@ app.post("/contact", (req, res) => {
 
     // const message = {to : "contact@mcalino.com", from : "alain@mcalino.com", subject : "Message from ...", text: "Hello ..."}
     // sgMail.send(message)
+    // Return success or failure message
 });
 
 app.use(

@@ -14,12 +14,12 @@ import nine from "./img/9.webp";
 import ten from "./img/10.webp";
 import eleven from "./img/11.webp";
 import avatar from "./img/alain.jpeg";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
 import Cards from "./components/Card.jsx";
 import CardAvatar from "./components/CardAvatar.jsx";
 import ProjectDetails from "./components/ProjectDetails.jsx";
 import CardBody from "./components/CardBody.jsx";
+import Header from "./components/Header.jsx";
+import Footer from "./components/Footer.jsx";
 
 export default function App() {
   const bgLists = [
@@ -38,7 +38,7 @@ export default function App() {
 
   let counter = 0; // Maybe useState
   let divBackground = useRef(null);
-  const navInfo = useRef(null);
+  const navData = useRef(null);
 
   const [form, setForm] = useState({
     names : "",
@@ -48,6 +48,13 @@ export default function App() {
   });
 
   useEffect(() => {
+        setInterval(function() {
+            divBackground.current.style.backgroundImage = `url(${
+                    bgLists[counter % c.bgLists.length]
+            })`;
+
+            counter += 1;
+        }, 5000);
         window.addEventListener("scroll", handleScroll);
         return () => {
           window.removeEventListener("scroll", handleScroll);
@@ -83,18 +90,10 @@ export default function App() {
        };
    }
 
-   setInterval(function() {
-         divBackground.current.style.backgroundImage = `url(${
-            bgLists[counter % c.bgLists.length]
-         })`;
-
-         counter += 1;
-   }, 5000);
-
   /**
-   * Set CSS attribute based on IE or cureent modern Browser
+   * Set CSS attribute based on IE or current modern Browser
    */
-  setCustomStyle(){
+  setCustomStyle = () => {
         if (!window.mobilecheck()) {
               if (document.all) {
                 document
@@ -112,12 +111,12 @@ export default function App() {
                   );
               }
         }
-  };
+  }
 
   /**
-   * Set CSS attribute based on IE or cureent modern Browser
+   * Set CSS attribute based on IE or current modern Browser
    */
-  unSetCustomStyle(){
+  unSetCustomStyle = () => {
         if (!window.mobilecheck()) {
               if (document.all) {
                 document
@@ -135,12 +134,12 @@ export default function App() {
                   );
               }
         }
-  };
+  }
 
   /**
    * Change navbar behavior base on the window page offset
    */
-  headerColorChange() {
+  headerColorChange = () => {
     if (!isISsr){
         const windowsScrollTop = window.pageYOffset;
 
@@ -152,7 +151,7 @@ export default function App() {
     }
   }
 
-  handleScroll(event) {
+  handleScroll = (event) => {
       if (!isISsr){
         if (!window.mobilecheck()) {
             headerColorChange();
@@ -162,54 +161,21 @@ export default function App() {
       }
   }
 
-  handleSubmit(){
-    // Track & Process data with useState
-    // Send data with fetch, axios API or Vanilla AJAX
+  checkMobile = () => {
+    if (!isISsr) {
+        return window.mobilecheck();
+    }
+    return false;
+  }
+
+  handleSubmit = () => {
+      // Track & Process data with useState
+      // Send data with fetch, axios API or Vanilla AJAX
   }
 
   return (
       <div ref={divBackground} className="main-content">
-        <Navbar
-          collapseOnSelect
-          fixed="top"
-          expand="lg"
-          bg="dark"
-          variant="dark"
-          className="nav-custom"
-        >
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse
-            id="responsive-navbar-nav"
-            className="justify-content-center"
-          >
-            <Nav ref={navInfo}>
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="#abouts">About</Nav.Link>
-              <Nav.Link href="#projects">Projects</Nav.Link>
-              <Nav.Link href="#contacts">Contacts</Nav.Link>
-              <Nav.Link
-                 href="https://github.com/Cirhuzalain"
-                 rel="noreferrer noopener"
-                 target="_blank"
-              >
-                <span className="fa-stack fa-1x">
-                    <i className="fa fa-circle fa-stack-2x text-primary" />
-                    <i className="fab fa-github fa-stack-2x fa-inverse" />
-                </span>
-              </Nav.Link>
-              <Nav.Link
-                href="https://twitter.com/cirhuzalain"
-                rel="noreferrer noopener"
-                target="_blank"
-              >
-                <span className="fa-stack fa-1x">
-                    <i className="fa fa-circle fa-stack-2x text-primary" />
-                    <i className="fab fa-twitter fa-stack-2x fa-inverse" />
-                </span>
-              </Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
+        <Header navInfo={navData} />
         <div className="second-content">
           <div className="intro">
             <h1>Hi There !</h1>
@@ -222,7 +188,7 @@ export default function App() {
               options={{
                 particles: {
                   number: {
-                    value: `${window.mobilecheck() ? (20):(80)}`,
+                    value: `${checkMobile() ? (20):(80)}`,
                   },
                   size: {
                     value: 4
@@ -358,11 +324,7 @@ export default function App() {
             </div>
           </div>
         </section>
-        <footer className="page-footer font-small blue">
-          <div className="footer-copyright text-center py-3">
-            © 2023 McAlino
-          </div>
-        </footer>
+        <Footer />
       </div>
   );
 }
