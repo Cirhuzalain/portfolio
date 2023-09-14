@@ -19,32 +19,22 @@ const app = express();
 
 const port = process.env.PORT || 3000;
 
-function getPageContent(file_name, pipe, res){
-    // Review fs readFile
-     fs.readFile(path.resolve(file_name), "utf8", (err, data) => {
-        if (err) {
-            console.error(err)
-            return res.status(500).send("Failed to load index.html")
-        }
-
-        return res.send(
-            data.replace(
-                "<div id='root'></div>",
-                `<div id="root">${pipe}</div>`
-            )
-        );
-     });
+function getPageContent(file_name){
+    // Handle failure
+    const mainPage = fs.readFileSync(path.resolve(file_name), {encoding : "utf8", flag: "r"});
+    return mainPage;
 }
 
 app.get("/", (req, res) => {
     // Return home page
     const {pipe} = renderToPipeableStream(<App />, {
         bootstrapScripts : ["dist/bundle.js"],
-        onShellReady(){
+        onAllReady(){
             res.setHeader('content-type', 'text/html');
-            // Swapping DOM Node & get index.html initial content
-            // let data = getPageContent("./public/index.html", pipe, res);
-            // data.replace("<div id='root'></div>", `<div id="root">${res}</div>`);
+            // Swapping / replacing DOM Node
+            // let data = getPageContent("./public/index.html");
+            // Replace empty div#root with App content
+            // data.replace("<div id='root'></div>", `<div id="root">${res.body}</div>`);
             pipe(res);
         }
     });
@@ -54,24 +44,26 @@ app.get("/seminar", (req, res) => {
     // Return seminar details
     const {pipe} = renderToPipeableStream(<Seminar />, {
         bootstrapScripts : ["dist/bundle.js"],
-        onShellReady(){
+        onAllReady(){
             res.setHeader('content-type', 'text/html');
+            // let data = getPageContent("./public/index.html");
+            // data.replace("<div id='root'></div>", `<div id="root">${res.body}</div>`);
+            pipe(res)
         }
     });
-
-   return getPageContent("./public/index.html", pipe, res);
 });
 
 app.get("/books", (req, res) => {
     // Return books list
     const {pipe} = renderToPipeableStream(<Books />, {
             bootstrapScripts : ["dist/bundle.js"],
-            onShellReady(){
+            onAllReady(){
                 res.setHeader('content-type', 'text/html');
+                // let data = getPageContent("./public/index.html");
+                // data.replace("<div id='root'></div>", `<div id="root">${res.body}</div>`);
+                pipe(res)
             }
     });
-
-   return getPageContent("./public/index.html", pipe, res);
 });
 
 app.post("/contact", (req, res) => {
