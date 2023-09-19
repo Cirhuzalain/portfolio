@@ -169,7 +169,7 @@ export default function App() {
   }
 
   handleSubmit = () => {
-      // Track & Process data with useState
+      // Process form data
       // Send data with fetch, axios API or Vanilla AJAX
   }
 
@@ -262,16 +262,16 @@ export default function App() {
                     </CardAvatar>
                     <CardBody profile>
                       <p className="text-muted">
-                      Alain is an Entrepreneur, a Researcher & a Software Engineer with strong passion and interest for Machine Learning more broadly
-                      and Natural Language Understanding more specifically, its broader applications (Entertainment, Health, Mobility, ...) to have societal impact
-                      in the realm of questions pertaining to awareness, adaptation, robustness, fairness, explainability, security, privacy, monitoring, ... (M^3A2RFESPLP, ...).
-                      He previously spent some time at <a href="https://aimsammi.org/" rel="noreferrer noopener" target="_blank">AIMS</a> thinking about the foundation of Machine Intelligence.
-                      He has extensively worked on several projects
-                      including but not limited to designing, implementing and
-                      deploying web / mobile applications. Throughout his career, he
-                      has worked with Python, Golang, Rust, C++, Java and Javascript based framework.
-                      More recently, he started experimenting with training and evaluating 
-                      the properties of the representation learned by deep networks.
+                          Alain is an Entrepreneur, a Researcher & a Software Engineer with strong passion and interest for Machine Learning more broadly
+                          and Natural Language Understanding more specifically, its broader applications (Entertainment, Health, Mobility, ...) to have societal impact
+                          in the realm of questions pertaining to awareness, adaptation, robustness, fairness, explainability, security, privacy, monitoring, ... (M^3A2RFESPLP, ...).
+                          He previously spent some time at <a href="https://aimsammi.org/" rel="noreferrer noopener" target="_blank">AIMS</a> thinking about the foundation of Machine Intelligence.
+                          He has extensively worked on several projects
+                          including but not limited to designing, implementing and
+                          deploying web / mobile applications. Throughout his career, he
+                          has worked with Python, Golang, Rust, C++, Java and Javascript based framework.
+                          More recently, he started experimenting with training and evaluating
+                          the properties of the representation learned by deep networks.
                       </p>
                     </CardBody>
                   </Cards>
@@ -298,28 +298,36 @@ export default function App() {
 
                 <div className="mb-3">
                     <label htmlFor="userNames" className="form-label">Names</label>
-                    <input id="userNames" type="text" className="form-control" placeholder="Alain M. Cirhuza" />
+                    <input id="userNames" type="text" className="form-control" onChange={ e => {
+                        setForm({...form, names : e.target.value.trim() });
+                    }} placeholder="Alain M. Cirhuza" />
                 </div>
 
                 <div className="mb-3">
                     <label htmlFor="userEmail" className="form-label">Email</label>
-                    <input id="userEmail" type="email" className="form-control" placeholder="alain@mcalino.com" />
+                    <input id="userEmail" type="email" className="form-control" onChange={ e => {
+                        setForm({...form, email : e.target.value.trim() });
+                    }} placeholder="alain@mcalino.com" />
                 </div>
 
                 <div className="mb-3">
                     <label htmlFor="userPhoneNumber" className="form-label">Phone Number</label>
-                    <input id="userPhoneNumber" type="phone" className="form-control" placeholder="+1 222 333 3535" />
+                    <input id="userPhoneNumber" type="phone" className="form-control" onChange={e => {
+                        setForm({...form, phoneNumber : e.target.value.trim() });
+                    }} placeholder="+1 222 333 3535" />
                 </div>
 
                 <div className="mb-3">
                     <label htmlFor="userMessage" className="form-label">Message</label>
-                    <textarea id="userMessage" type="text" className="form-control" placeholder="Hello ..." rows="6"></textarea>
+                    <textarea id="userMessage" type="text" className="form-control" onChange={e => {
+                        setForm({...form, message : e.target.value.trim() });
+                    }}
+                    placeholder="Hello ..." rows="6"></textarea>
                 </div>
 
                 <div className="mb-3">
-                    <button id="submitButton" type="submit" className="btn btn-primary">Submit</button>
+                    <button id="submitButton" type="submit" onClick={handleSubmit} className="btn btn-primary">Submit</button>
                 </div>
-
               </div>
             </div>
           </div>

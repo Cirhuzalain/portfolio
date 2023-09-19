@@ -7,12 +7,12 @@ export default function Books(){
     const navData = useRef(null);
 
     return (
-        <div>
+        <>
             <Header navInfo={navData} />
                 <div>
                     <p>Books list ...</p>
                 </div>
             <Footer />
-        </div>
+        </>
     )
 }

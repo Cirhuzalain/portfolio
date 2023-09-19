@@ -7,12 +7,12 @@ export default function Seminar(){
     const navData = useRef(null);
 
     return (
-        <div>
+        <>
             <Header navInfo={navData} />
                 <div>
                     <p>Seminar details ...</p>
                 </div>
             <Footer />
-        </div>
+        </>
     )
 }
