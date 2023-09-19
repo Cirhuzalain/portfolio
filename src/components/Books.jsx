@@ -1,7 +1,6 @@
 import React, {useRef} from "react";
 import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
-import MainPage from "./MainPage.jsx";
 
 export default function Books(){
 
