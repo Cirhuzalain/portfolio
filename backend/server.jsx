@@ -7,12 +7,13 @@ import sgMail from "@sendgrid/mail";
 import App from "../src/App.jsx";
 import Books from "../src/components/Books.jsx";
 import Seminar from "../src/components/Seminar.jsx";
+import Quotes from "../src/components/Quotes.jsx";
 
 const app = express();
 // sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
 // Handle assets (build/), GCS and App engine yaml config file
-// Update / Refactor App.jsx to match current React docs version & books / seminar
+// Replace empty div#root with App content
 
 // app.use(express.static("public"));
 // app.use(express.static("build/static"));
@@ -31,9 +32,7 @@ app.get("/", (req, res) => {
         bootstrapScripts : ["dist/bundle.js"],
         onAllReady(){
             res.setHeader('content-type', 'text/html');
-            // Swapping / replacing DOM Node
             // let data = getPageContent("./public/index.html");
-            // Replace empty div#root with App content
             // data.replace("<div id='root'></div>", `<div id="root">${res.body}</div>`);
             pipe(res);
         }
@@ -48,7 +47,7 @@ app.get("/seminar", (req, res) => {
             res.setHeader('content-type', 'text/html');
             // let data = getPageContent("./public/index.html");
             // data.replace("<div id='root'></div>", `<div id="root">${res.body}</div>`);
-            pipe(res)
+            pipe(res);
         }
     });
 });
@@ -61,7 +60,20 @@ app.get("/books", (req, res) => {
                 res.setHeader('content-type', 'text/html');
                 // let data = getPageContent("./public/index.html");
                 // data.replace("<div id='root'></div>", `<div id="root">${res.body}</div>`);
-                pipe(res)
+                pipe(res);
+            }
+    });
+});
+
+app.get("/quotes", (req, res) => {
+    // Return books list
+    const {pipe} = renderToPipeableStream(<Quotes />, {
+            bootstrapScripts : ["dist/bundle.js"],
+            onAllReady(){
+                res.setHeader('content-type', 'text/html');
+                // let data = getPageContent("./public/index.html");
+                // data.replace("<div id='root'></div>", `<div id="root">${res.body}</div>`);
+                pipe(res);
             }
     });
 });
