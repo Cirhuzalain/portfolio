@@ -8,6 +8,8 @@ import App from "../src/App.jsx";
 import Books from "../src/components/Books.jsx";
 import Seminar from "../src/components/Seminar.jsx";
 import Quotes from "../src/components/Quotes.jsx";
+import Blog from "../src/components/Blog.jsx";
+import BlogDetails from "../src/components/BlogDetails.jsx";
 
 const app = express();
 // sgMail.setApiKey(process.env.SENDGRID_API_KEY)
@@ -39,32 +41,6 @@ app.get("/", (req, res) => {
     });
 });
 
-app.get("/seminar", (req, res) => {
-    // Return seminar details
-    const {pipe} = renderToPipeableStream(<Seminar />, {
-        bootstrapScripts : ["dist/bundle.js"],
-        onAllReady(){
-            res.setHeader('content-type', 'text/html');
-            // let data = getPageContent("./public/index.html");
-            // data.replace("<div id='root'></div>", `<div id="root">${res.body}</div>`);
-            pipe(res);
-        }
-    });
-});
-
-app.get("/books", (req, res) => {
-    // Return books list
-    const {pipe} = renderToPipeableStream(<Books />, {
-            bootstrapScripts : ["dist/bundle.js"],
-            onAllReady(){
-                res.setHeader('content-type', 'text/html');
-                // let data = getPageContent("./public/index.html");
-                // data.replace("<div id='root'></div>", `<div id="root">${res.body}</div>`);
-                pipe(res);
-            }
-    });
-});
-
 app.get("/quotes", (req, res) => {
     // Return books list
     const {pipe} = renderToPipeableStream(<Quotes />, {
@@ -78,19 +54,71 @@ app.get("/quotes", (req, res) => {
     });
 });
 
-app.post("/contact", (req, res) => {
-
-    // const userName = req.body.name
-    // const userEmail = req.body.email
-    // const phoneNumber = req.body.phone
-    // const userMessage = req.body.message
-
-    // Handle / process data (Names, Email, Phone Number & Message) & Queueing / send email to info@mcalino.com or contact@mcalino.com
-
-    // const message = {to : "contact@mcalino.com", from : "alain@mcalino.com", subject : "Message from ...", text: "Hello ..."}
-    // sgMail.send(message)
-    // Return success or failure message
+app.get("/blog", (req, res) => {
+    // Return books list
+    const {pipe} = renderToPipeableStream(<Blog />, {
+            bootstrapScripts : ["dist/bundle.js"],
+            onAllReady(){
+                res.setHeader('content-type', 'text/html');
+                // let data = getPageContent("./public/index.html");
+                // data.replace("<div id='root'></div>", `<div id="root">${res.body}</div>`);
+                pipe(res);
+            }
+    });
 });
+
+app.get("/blog/{id}", (req, res) => {
+    // Return books list
+    const {pipe} = renderToPipeableStream(<BlogDetails />, {
+            bootstrapScripts : ["dist/bundle.js"],
+            onAllReady(){
+                res.setHeader('content-type', 'text/html');
+                // let data = getPageContent("./public/index.html");
+                // data.replace("<div id='root'></div>", `<div id="root">${res.body}</div>`);
+                pipe(res);
+            }
+    });
+});
+
+// app.get("/seminar", (req, res) => {
+//     // Return seminar details
+//     const {pipe} = renderToPipeableStream(<Seminar />, {
+//         bootstrapScripts : ["dist/bundle.js"],
+//         onAllReady(){
+//             res.setHeader('content-type', 'text/html');
+//             // let data = getPageContent("./public/index.html");
+//             // data.replace("<div id='root'></div>", `<div id="root">${res.body}</div>`);
+//             pipe(res);
+//         }
+//     });
+// });
+
+// app.get("/books", (req, res) => {
+//     // Return books list
+//     const {pipe} = renderToPipeableStream(<Books />, {
+//             bootstrapScripts : ["dist/bundle.js"],
+//             onAllReady(){
+//                 res.setHeader('content-type', 'text/html');
+//                 // let data = getPageContent("./public/index.html");
+//                 // data.replace("<div id='root'></div>", `<div id="root">${res.body}</div>`);
+//                 pipe(res);
+//             }
+//     });
+// });
+
+// app.post("/contact", (req, res) => {
+//
+//     // const userName = req.body.name
+//     // const userEmail = req.body.email
+//     // const phoneNumber = req.body.phone
+//     // const userMessage = req.body.message
+//
+//     // Handle / process data (Names, Email, Phone Number & Message) & Queueing / send email to info@mcalino.com or contact@mcalino.com
+//
+//     // const message = {to : "contact@mcalino.com", from : "alain@mcalino.com", subject : "Message from ...", text: "Hello ..."}
+//     // sgMail.send(message)
+//     // Return success or failure message
+// });
 
 app.use(
     express.static(path.resolve(__dirname, ".", "dist"), {maxAge : "1d"})
