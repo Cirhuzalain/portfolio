@@ -8,8 +8,8 @@ import App from "../src/App.jsx";
 import Books from "../src/components/Books.jsx";
 import Seminar from "../src/components/Seminar.jsx";
 import Quotes from "../src/components/Quotes.jsx";
-import Blog from "../src/components/Blog.jsx";
-import BlogDetails from "../src/components/BlogDetails.jsx";
+import Blogs from "../src/components/Blogs.jsx";
+import BlogDetail from "../src/components/BlogDetail.jsx";
 
 const app = express();
 // sgMail.setApiKey(process.env.SENDGRID_API_KEY)
@@ -41,22 +41,9 @@ app.get("/", (req, res) => {
     });
 });
 
-app.get("/quotes", (req, res) => {
-    // Return books list
-    const {pipe} = renderToPipeableStream(<Quotes />, {
-            bootstrapScripts : ["dist/bundle.js"],
-            onAllReady(){
-                res.setHeader('content-type', 'text/html');
-                // let data = getPageContent("./public/index.html");
-                // data.replace("<div id='root'></div>", `<div id="root">${res.body}</div>`);
-                pipe(res);
-            }
-    });
-});
-
 app.get("/blog", (req, res) => {
     // Return books list
-    const {pipe} = renderToPipeableStream(<Blog />, {
+    const {pipe} = renderToPipeableStream(<Blogs />, {
             bootstrapScripts : ["dist/bundle.js"],
             onAllReady(){
                 res.setHeader('content-type', 'text/html');
@@ -69,7 +56,20 @@ app.get("/blog", (req, res) => {
 
 app.get("/blog/{id}", (req, res) => {
     // Return books list
-    const {pipe} = renderToPipeableStream(<BlogDetails />, {
+    const {pipe} = renderToPipeableStream(<BlogDetail />, {
+            bootstrapScripts : ["dist/bundle.js"],
+            onAllReady(){
+                res.setHeader('content-type', 'text/html');
+                // let data = getPageContent("./public/index.html");
+                // data.replace("<div id='root'></div>", `<div id="root">${res.body}</div>`);
+                pipe(res);
+            }
+    });
+});
+
+app.get("/quotes", (req, res) => {
+    // Return books list
+    const {pipe} = renderToPipeableStream(<Quotes />, {
             bootstrapScripts : ["dist/bundle.js"],
             onAllReady(){
                 res.setHeader('content-type', 'text/html');

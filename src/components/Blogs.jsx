@@ -2,7 +2,7 @@ import React, {userRef} from "react";
 import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
 
-export default function Blog(){
+export default function Blogs(){
 
     const navData = userRef(null);
 
