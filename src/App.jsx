@@ -20,6 +20,7 @@ import ProjectDetails from "./components/ProjectDetails.jsx";
 import CardBody from "./components/CardBody.jsx";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
+import LinkMeta from "./components/LinkMeta.jsx";
 
 export default function App() {
   const bgLists = [
@@ -174,6 +175,9 @@ export default function App() {
   }
 
   return (
+      <html lang="en">
+        <LinkMeta />
+      <body>
       <div ref={divBackground} className="main-content">
         <Header navInfo={navData} />
         <div className="second-content">
@@ -334,5 +338,8 @@ export default function App() {
         </section>
         <Footer />
       </div>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVM9MZ5PGV"></script>
+     </body>
+    </html>
   );
 }
