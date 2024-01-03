@@ -31,10 +31,10 @@ function getPageContent(file_name){
 app.get("/", (req, res) => {
     // Return home page
     const {pipe} = renderToPipeableStream(<App />, {
-        bootstrapScripts : ["dist/bundle.js"],
+        bootstrapScripts : ["dist/bundle.js", "./analytic.js"],
         onAllReady(){
             res.setHeader('content-type', 'text/html');
-            // let data = getPageContent("./public/index.html");
+            // let data = getPageContent("./public/index.html"); res.req.client.server._events.request.response
             // data.replace("<div id='root'></div>", `<div id="root">${res.body}</div>`);
             pipe(res);
         }
@@ -61,6 +61,7 @@ app.get("/blog/{id}", (req, res) => {
             onAllReady(){
                 res.setHeader('content-type', 'text/html');
                 // let data = getPageContent("./public/index.html");
+                // Load blog detail
                 // data.replace("<div id='root'></div>", `<div id="root">${res.body}</div>`);
                 pipe(res);
             }
