@@ -3,7 +3,6 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
 import Container from '@mui/material/Container';
-import Typography from './Typography.jsx';
 
 // Component from : https://mui.com/store/items/onepirate/
 
@@ -150,15 +149,8 @@ export default function ProductCategories() {
               }}
             >
               <a href={image.link} rel="noreferrer" target="_blank">
-              <Typography
-                component="h3"
-                variant="h6"
-                color="inherit"
-                className="imageTitle"
-              >
-                {image.title}
+                <h3>{image.title}</h3>
                 <div className="imageMarked" />
-              </Typography>
               </a>
             </Box>
           </ImageIconButton>

@@ -19,29 +19,11 @@ export default function Header({navInfo}){
             >
                 <Nav ref={navInfo}>
                     <Nav.Link href="/">Home</Nav.Link>
-                    <Nav.Link href="#abouts">About</Nav.Link>
-                    <Nav.Link href="#projects">Projects</Nav.Link>
-                    <Nav.Link href="#contacts">Contacts</Nav.Link>
-                    <Nav.Link
-                        href="https://github.com/Cirhuzalain"
-                        rel="noreferrer noopener"
-                        target="_blank"
-                    >
-                        <span className="fa-stack fa-1x">
-                            <i className="fa fa-circle fa-stack-2x text-primary" />
-                            <i className="fab fa-github fa-stack-2x fa-inverse" />
-                        </span>
-                    </Nav.Link>
-                    <Nav.Link
-                        href="https://twitter.com/cirhuzalain"
-                        rel="noreferrer noopener"
-                        target="_blank"
-                      >
-                        <span className="fa-stack fa-1x">
-                            <i className="fa fa-circle fa-stack-2x text-primary" />
-                            <i className="fab fa-twitter fa-stack-2x fa-inverse" />
-                        </span>
-                    </Nav.Link>
+                    <Nav.Link href="/quotes">Quotes</Nav.Link>
+                    <Nav.Link href="/blog">Blog</Nav.Link>
+                    <Nav.Link href="/#abouts">About</Nav.Link>
+                    <Nav.Link href="/#projects">Projects</Nav.Link>
+                    <Nav.Link href="/#contacts">Contacts</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
