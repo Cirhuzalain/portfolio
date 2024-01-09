@@ -10,12 +10,12 @@ body {
   font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.bg-dark {
+/*.bg-dark {
   background-color: transparent !important;
 }
 .navbar, .bg-dark {
   box-shadow: unset !important;
-}
+}*/
 
 p {
   text-align: justify;
@@ -231,4 +231,9 @@ h3.MuiTypography-root.imageTitle.MuiTypography-h6.MuiTypography-colorInherit {
   to {
     padding-top: 24px;
   }
+}
+
+.quotes-content, .blog-content, .detail-content {
+    min-height: 100vh;
+    padding-top: 100px;
 }

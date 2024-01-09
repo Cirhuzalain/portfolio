@@ -14,10 +14,7 @@ import nine from "./img/9.webp";
 import ten from "./img/10.webp";
 import eleven from "./img/11.webp";
 import avatar from "./img/alain.jpeg";
-import Cards from "./components/Card.jsx";
-import CardAvatar from "./components/CardAvatar.jsx";
 import ProjectDetails from "./components/ProjectDetails.jsx";
-import CardBody from "./components/CardBody.jsx";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
 import LinkMeta from "./components/LinkMeta.jsx";
@@ -41,13 +38,6 @@ export default function App() {
   let divBackground = useRef(null);
   const navData = useRef(null);
 
-  const [form, setForm] = useState({
-    names : "",
-    email : "",
-    phoneNumber : "",
-    message : ""
-  });
-
   useEffect(() => {
         setInterval(function() {
             divBackground.current.style.backgroundImage = `url(${
@@ -56,9 +46,9 @@ export default function App() {
 
             counter += 1;
         }, 5000);
-        window.addEventListener("scroll", handleScroll);
+        //window.addEventListener("scroll", handleScroll);
         return () => {
-          window.removeEventListener("scroll", handleScroll);
+          // window.removeEventListener("scroll", handleScroll);
         }
   }, []);
 
@@ -162,6 +152,8 @@ export default function App() {
       }
   }
 
+
+
   checkMobile = () => {
     if (!isISsr) {
         return window.mobilecheck();
@@ -256,15 +248,10 @@ export default function App() {
             <div className="row abouts">
               <div className="col-md-12">
                 <div className="row">
-                  <div className="col-md-12">
-                  <Cards profile style={{ boxShadow : '12px 15px 20px 0 rgba(46, 61, 73, 0.15)', 
-                                        borderRadius : '0.375rem', border : '1px solid rgba(0,0,0,.125)' }}>
-                    <CardAvatar profile>
+                  <div className="col-md-12 card">
                       <a href="#alain" onClick={e => e.preventDefault()}>
                         <img src={avatar} alt="" />
                       </a>
-                    </CardAvatar>
-                    <CardBody profile>
                       <p className="text-muted">
                           Alain is an Entrepreneur, a Researcher & a Software Engineer with strong passion and interest for Machine Learning more broadly
                           and Natural Language Processing / Understanding more specifically, its broader applications (Entertainment, Health, Mobility, ...) to have societal impact
@@ -277,8 +264,6 @@ export default function App() {
                           More recently, he started experimenting with training and evaluating
                           the properties of the representation learned by deep networks.
                       </p>
-                    </CardBody>
-                  </Cards>
                   </div>
                 </div>
               </div>
@@ -299,39 +284,40 @@ export default function App() {
           <div className="container">
             <div className="row">
               <div className="about card col-md-12 col-md-offset-1">
-
-                <div className="mb-3">
-                    <label htmlFor="userNames" className="form-label">Names</label>
-                    <input id="userNames" type="text" className="form-control" onChange={ e => {
-                        setForm({...form, names : e.target.value.trim() });
-                    }} placeholder="Alain M. Cirhuza" />
-                </div>
-
-                <div className="mb-3">
-                    <label htmlFor="userEmail" className="form-label">Email</label>
-                    <input id="userEmail" type="email" className="form-control" onChange={ e => {
-                        setForm({...form, email : e.target.value.trim() });
-                    }} placeholder="alain@mcalino.com" />
-                </div>
-
-                <div className="mb-3">
-                    <label htmlFor="userPhoneNumber" className="form-label">Phone Number</label>
-                    <input id="userPhoneNumber" type="phone" className="form-control" onChange={e => {
-                        setForm({...form, phoneNumber : e.target.value.trim() });
-                    }} placeholder="+1 222 333 3535" />
-                </div>
-
-                <div className="mb-3">
-                    <label htmlFor="userMessage" className="form-label">Message</label>
-                    <textarea id="userMessage" type="text" className="form-control" onChange={e => {
-                        setForm({...form, message : e.target.value.trim() });
-                    }}
-                    placeholder="Hello ..." rows="6"></textarea>
-                </div>
-
-                <div className="mb-3">
-                    <button id="submitButton" type="submit" onClick={handleSubmit} className="btn btn-primary">Submit</button>
-                </div>
+                <a href="mailto:cirhuzalain@gmail.com">
+                    <span className="fa-stack fa-4x">
+                        <i className="fa fa-circle fa-stack-2x text-primary" />
+                        <i className="fa fa-envelope fa-stack-1x fa-inverse" />
+                     </span>
+                </a>
+                <a href="https://github.com/Cirhuzalain"
+                   rel="noreferrer noopener"
+                   target="_blank">
+                    <span className="fa-stack fa-4x">
+                        <i className="fa fa-circle fa-stack-2x text-primary" />
+                        <i className="fab fa-github-square fa-stack-1x fa-inverse" />
+                    </span>
+                </a>
+                <a
+                    href="https://twitter.com/cirhuzalain"
+                    rel="noreferrer noopener"
+                    target="_blank"
+                >
+                    <span className="fa-stack fa-4x">
+                        <i className="fa fa-circle fa-stack-2x text-primary" />
+                        <i className="fab fa-twitter-square fa-stack-1x fa-inverse" />
+                    </span>
+                </a>
+                <a
+                    href="https://www.linkedin.com/in/mcalino/"
+                    rel="noreferrer noopener"
+                    target="_blank"
+                >
+                    <span className="fa-stack fa-4x">
+                        <i className="fa fa-circle fa-stack-2x text-primary" />
+                        <i className="fab fa-linkedin fa-stack-1x fa-inverse" />
+                    </span>
+                </a>
               </div>
             </div>
           </div>
@@ -339,6 +325,8 @@ export default function App() {
         <Footer />
       </div>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVM9MZ5PGV"></script>
+      <script src="server.js"></script>
+      <script src="analytics.js"></script>
      </body>
     </html>
   );

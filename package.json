@@ -3,15 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@mui/material": "5.14.8",
-    "@mui/styles": "^5.14.7",
+    "@emotion/react": "11.11.1",
+    "@emotion/styled": "11.11.0",
+    "@mui/material": "5.15.3",
     "@sendgrid/mail": "^7.7.0",
     "bootstrap": "^4.6.0",
     "classnames": "^2.3.1",
     "esbuild": "0.19.2",
     "express": "^4.18.2",
+    "html-react-parser": "^5.0.11",
     "react": "18.2.0",
     "react-bootstrap": "^1.5.2",
     "react-dom": "18.2.0",
@@ -19,8 +19,8 @@
     "react-tsparticles": "^1.38.0"
   },
   "scripts": {
-    "build:client": "esbuild src/index.js --bundle --outfile=dist/bundle.js --loader:.js=jsx  --loader:.jpeg=dataurl --loader:.webp=dataurl --loader:.svg=dataurl",
-    "build:server": "esbuild backend/server.jsx --bundle --outfile=build/server.js --platform=node  --loader:.jpeg=dataurl --loader:.webp=dataurl --loader:.svg=dataurl",
+    "build:client": "esbuild src/index.js --bundle --outfile=dist/bundle.js --loader:.js=jsx  --loader:.jpeg=dataurl --loader:.webp=dataurl --loader:.html=dataurl --loader:.svg=dataurl",
+    "build:server": "esbuild backend/server.jsx --bundle --outfile=build/server.js --platform=node  --loader:.jpeg=dataurl --loader:.webp=dataurl --loader:.html=dataurl --loader:.svg=dataurl",
     "build": "npm run build:client && npm run build:server",
     "start": "node build/server.js"
   },

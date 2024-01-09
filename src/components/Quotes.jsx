@@ -1,5 +1,6 @@
 import React, {useRef} from "react";
 import Header from "./Header.jsx";
+import LinkMeta from "./LinkMeta.jsx";
 import Footer from "./Footer.jsx";
 
 export default function Quotes(){
@@ -8,8 +9,11 @@ export default function Quotes(){
 
     return (
         <>
+             <html lang="en">
+                <LinkMeta />
+            <body>
             <Header navInfo={navData} />
-                <div>
+                <div className="quotes-content">
                     <p>
                          "Knowledge is having the right answers.
                           Intelligence is asking is asking the right questions.
@@ -48,9 +52,13 @@ export default function Quotes(){
                     <p>
                         "The most incomprehensible thing about the world is that it's comprehensible."AE
                     </p>
-                    <p>...</p>
                 </div>
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVM9MZ5PGV"></script>
+                <script src="/server.js"></script>
+                <script src="/analytics.js"></script>
             <Footer />
+            </body>
+            </html>
         </>
     )
 }

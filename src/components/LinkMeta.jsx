@@ -25,6 +25,7 @@ export default function LinkMeta(){
                 <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'/>
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
                 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+                <link rel="stylesheet" href="/server.css"/>
                 <title>McAlino</title>
             </head>
         </>
