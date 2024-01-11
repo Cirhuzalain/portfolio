@@ -6,10 +6,6 @@
     "@emotion/react": "11.11.1",
     "@emotion/styled": "11.11.0",
     "@mui/material": "5.15.3",
-<<<<<<< HEAD
-=======
-    "@sendgrid/mail": "^7.7.0",
->>>>>>> 81b7dcf (Add Blog detail content)
     "bootstrap": "^4.6.0",
     "classnames": "^2.3.1",
     "esbuild": "0.19.2",
