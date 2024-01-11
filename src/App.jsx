@@ -248,22 +248,28 @@ export default function App() {
             <div className="row abouts">
               <div className="col-md-12">
                 <div className="row">
-                  <div className="col-md-12 card">
-                      <a href="#alain" onClick={e => e.preventDefault()}>
-                        <img src={avatar} alt="" />
-                      </a>
-                      <p className="text-muted">
-                          Alain is an Entrepreneur, a Researcher & a Software Engineer with strong passion and interest for Machine Learning more broadly
-                          and Natural Language Processing / Understanding more specifically, its broader applications (Entertainment, Health, Mobility, ...) to have societal impact
-                          in the realm of questions pertaining to awareness, adaptation, robustness, fairness, explainability, security, privacy, monitoring, ... (M^3A2RFESPLP, ...).
-                          He previously spent some time at <a href="https://aimsammi.org/" rel="noreferrer noopener" target="_blank">AIMS</a> thinking about the foundation of Machine Intelligence.
-                          He has extensively worked on several projects
-                          including but not limited to designing, implementing and
-                          deploying web / mobile applications. Throughout his career, he
-                          has worked with Python, Golang, Rust, C++, Java and Javascript based framework.
-                          More recently, he started experimenting with training and evaluating
-                          the properties of the representation learned by deep networks.
-                      </p>
+                  <div className="col-md-12">
+                      <div className="jss1 jss3 jss_content">
+                        <div className="jss5 jss6">
+                          <a href="#alain" onClick={e => e.preventDefault()}>
+                            <img src={avatar} alt="" />
+                          </a>
+                        </div>
+                        <div className="jss8 jss10">
+                          <p className="text-muted">
+                              Alain is an Entrepreneur, a Researcher & a Software Engineer with strong passion and interest for Machine Learning more broadly
+                              and Natural Language Processing / Understanding more specifically, its broader applications (Entertainment, Health, Mobility, ...) to have societal impact
+                              in the realm of questions pertaining to awareness, adaptation, robustness, fairness, explainability, security, privacy, monitoring, ... (M^3A2RFESPLP, ...).
+                              He previously spent some time at <a href="https://aimsammi.org/" rel="noreferrer noopener" target="_blank">AIMS</a> thinking about the foundation of Machine Intelligence.
+                              He has extensively worked on several projects
+                              including but not limited to designing, implementing and
+                              deploying web / mobile applications. Throughout his career, he
+                              has worked with Python, Golang, Rust, C++, Java and Javascript based framework.
+                              More recently, he started experimenting with training and evaluating
+                              the properties of the representation learned by deep networks.
+                          </p>
+                       </div>
+                      </div>
                   </div>
                 </div>
               </div>

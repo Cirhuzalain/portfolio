@@ -16,12 +16,14 @@ export default function Blogs(){
                 <LinkMeta />
             <body>
             <Header navInfo={navData} />
-                <div className="blog-content">
-                    {
-                        pageDetailData.map((item) => (
-                            <a key={item.id} href={`/blog/${item.id}`}><h2 key={item.id}>{item.name}</h2></a>
-                        ))
-                    }
+                <div className="section-content">
+                    <div className="blog-content card">
+                        {
+                            pageDetailData.map((item) => (
+                                <a key={item.id} href={`/blog/${item.id}`}><h2 key={item.id}>{item.name}</h2></a>
+                            ))
+                        }
+                    </div>
                 </div>
             <Footer />
             <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVM9MZ5PGV"></script>

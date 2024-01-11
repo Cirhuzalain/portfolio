@@ -3,7 +3,6 @@ import fs from "fs";
 import express from "express";
 import React from "react";
 import {renderToPipeableStream} from "react-dom/server";
-import sgMail from "@sendgrid/mail";
 import App from "../src/App.jsx";
 import Books from "../src/components/Books.jsx";
 import Seminar from "../src/components/Seminar.jsx";
@@ -12,7 +11,6 @@ import Blogs from "../src/components/Blogs.jsx";
 import BlogDetail from "../src/components/BlogDetail.jsx";
 
 const app = express();
-// sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
 // Handle assets (build/), GCS and App engine yaml config file
 // Replace empty div#root with App content
