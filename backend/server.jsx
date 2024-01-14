@@ -4,8 +4,6 @@ import express from "express";
 import React from "react";
 import {renderToPipeableStream} from "react-dom/server";
 import App from "../src/App.jsx";
-import Books from "../src/components/Books.jsx";
-import Seminar from "../src/components/Seminar.jsx";
 import Quotes from "../src/components/Quotes.jsx";
 import Blogs from "../src/components/Blogs.jsx";
 import BlogDetail from "../src/components/BlogDetail.jsx";
@@ -30,7 +28,7 @@ function getPageContent(file_name){
 app.get("/", (req, res) => {
     // Return home page
     const {pipe} = renderToPipeableStream(<App />, {
-        bootstrapScripts : [],
+        bootstrapScripts : ["/bundle.js"],
         onAllReady(){
             res.setHeader('content-type', 'text/html');
             // let data = getPageContent("./public/index.html");
@@ -43,7 +41,7 @@ app.get("/", (req, res) => {
 app.get("/blog", (req, res) => {
     // Return books list
     const {pipe} = renderToPipeableStream(<Blogs />, {
-            bootstrapScripts : [],
+            bootstrapScripts : ["/bundle.js"],
             onAllReady(){
                 res.setHeader('content-type', 'text/html');
                 // let data = getPageContent("./public/index.html");
@@ -56,7 +54,7 @@ app.get("/blog", (req, res) => {
 app.get("/blog/:id", (req, res) => {
     // Return books list
     const {pipe} = renderToPipeableStream(<BlogDetail />, {
-            bootstrapScripts : [],
+            bootstrapScripts : ["/bundle.js"],
             onAllReady(){
                 res.setHeader('content-type', 'text/html');
                 // let data = getPageContent("./public/index.html");
@@ -71,7 +69,7 @@ app.get("/blog/:id", (req, res) => {
 app.get("/quotes", (req, res) => {
     // Return books list
     const {pipe} = renderToPipeableStream(<Quotes />, {
-            bootstrapScripts : [],
+            bootstrapScripts : ["/bundle.js"],
             onAllReady(){
                 res.setHeader('content-type', 'text/html');
                 // let data = getPageContent("./public/index.html");

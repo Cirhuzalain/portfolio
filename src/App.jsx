@@ -46,9 +46,9 @@ export default function App() {
 
             counter += 1;
         }, 5000);
-        //window.addEventListener("scroll", handleScroll);
+        window.addEventListener("scroll", handleScroll);
         return () => {
-          // window.removeEventListener("scroll", handleScroll);
+          window.removeEventListener("scroll", handleScroll);
         }
   }, []);
 
