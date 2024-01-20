@@ -2,11 +2,11 @@ import React, {useRef, useState, useEffect} from "react";
 import parse from "html-react-parser"
 import LinkMeta from './LinkMeta.jsx';
 import Header from "./Header.jsx";
-import blogData from "../contents/Datasets.html";
 import cds from "../contents/CDS.html";
 import lp from "../contents/LP.html";
 import rpa from "../contents/RPA.html";
 import uq from "../contents/UQ.html";
+import rs from "../contents/RS.html";
 import pageDetailData from "../utils.jsx";
 import Footer from "./Footer.jsx";
 
@@ -53,8 +53,11 @@ export default function BlogDetail(){
             case 4:
                 newBlogData = uq;
                 break;
+            case 5:
+                newBlogData = rs;
+                break;
             default:
-                newBlogData = blogData;
+                newBlogData = cds;
         }
         newBlogData = newBlogData.replaceAll('%0A', '');
     }
@@ -64,6 +67,7 @@ export default function BlogDetail(){
     }
 
     newBlogData = newBlogData.replaceAll('&%23182', '');
+    newBlogData = newBlogData.replaceAll('%23', '#');
     newBlogData = newBlogData.replaceAll('data:text/html;charset=utf-8,', '');
 
     return (

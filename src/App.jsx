@@ -41,7 +41,7 @@ export default function App() {
   useEffect(() => {
         setInterval(function() {
             divBackground.current.style.backgroundImage = `url(${
-                    bgLists[counter % c.bgLists.length]
+                    bgLists[counter % bgLists.length]
             })`;
 
             counter += 1;
