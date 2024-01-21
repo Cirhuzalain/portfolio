@@ -29,6 +29,8 @@ export default function BlogDetail(){
     let pageId = 0;
     let newBlogData = null;
     let contentData = null;
+    let header = "";
+    let mainPage = "";
 
     if (!isISsr){
         let pagePath = window.location.pathname;
