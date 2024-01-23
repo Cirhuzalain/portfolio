@@ -60,15 +60,11 @@ export default function BlogDetail(){
                 newBlogData = cds;
         }
         newBlogData = newBlogData.replaceAll('%0A', '');
-    }
 
-    if (newBlogData == null){
-        newBlogData = cds.replaceAll('%0A', '');
+        newBlogData = newBlogData.replaceAll('&%23182', '');
+        newBlogData = newBlogData.replaceAll('%23', '#');
+        newBlogData = newBlogData.replaceAll('data:text/html;charset=utf-8,', '');
     }
-
-    newBlogData = newBlogData.replaceAll('&%23182', '');
-    newBlogData = newBlogData.replaceAll('%23', '#');
-    newBlogData = newBlogData.replaceAll('data:text/html;charset=utf-8,', '');
 
     return (
         <>
@@ -79,7 +75,7 @@ export default function BlogDetail(){
                 <div className="section-content">
                     <div className="detail-content card">
                         {
-                            parse(newBlogData)
+                            newBlogData == null ? <h2>Loading ...</h2> : parse(newBlogData)
                         }
                     </div>
                 </div>
