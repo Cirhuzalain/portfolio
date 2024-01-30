@@ -4,7 +4,7 @@ import LinkMeta from './LinkMeta.jsx';
 import Header from "./Header.jsx";
 import cds from "../contents/CDS.html";
 import lp from "../contents/LP.html";
-import rpa from "../contents/RPA.html";
+import ib from "../contents/IB.html";
 import uq from "../contents/UQ.html";
 import rs from "../contents/RS.html";
 import pageDetailData from "../utils.jsx";
@@ -48,7 +48,7 @@ export default function BlogDetail(){
                 newBlogData = lp;
                 break;
             case 3:
-                newBlogData = rpa;
+                newBlogData = ib;
                 break;
             case 4:
                 newBlogData = uq;
