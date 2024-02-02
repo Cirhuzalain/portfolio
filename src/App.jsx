@@ -331,8 +331,8 @@ export default function App() {
         <Footer />
       </div>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVM9MZ5PGV"></script>
-      <script src="server.js"></script>
-      <script src="analytics.js"></script>
+      <script src="/server.js"></script>
+      <script src="/analytics.js"></script>
      </body>
     </html>
   );
