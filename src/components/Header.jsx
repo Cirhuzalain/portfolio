@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 
-export default function Header({navInfo}){
+export default function Header(){
     return (
         <Navbar
             collapseOnSelect
@@ -17,7 +17,7 @@ export default function Header({navInfo}){
                 id="responsive-navbar-nav"
                 className="justify-content-center"
             >
-                <Nav ref={navInfo}>
+                <Nav>
                     <Nav.Link href="/">Home</Nav.Link>
                     <Nav.Link href="/quotes">Quotes</Nav.Link>
                     <Nav.Link href="/blog">Blog</Nav.Link>

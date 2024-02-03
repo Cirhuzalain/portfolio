@@ -13,8 +13,6 @@ import Footer from "./Footer.jsx";
 
 export default function BlogDetail(){
 
-    const navData = useRef(null);
-
     useIsSSR = () => {
             const [isISsr, setIsSsr] = useState(true);
 
@@ -71,7 +69,7 @@ export default function BlogDetail(){
             <html lang="en">
                 <LinkMeta  />
             <body>
-            <Header navInfo={navData} />
+            <Header />
                 <div className="section-content">
                     <div className="detail-content card">
                         {

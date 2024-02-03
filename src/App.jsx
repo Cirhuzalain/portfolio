@@ -36,7 +36,6 @@ export default function App() {
 
   let counter = 0; // Maybe useState
   let divBackground = useRef(null);
-  const navData = useRef(null);
 
   useEffect(() => {
         setInterval(function() {
@@ -171,7 +170,7 @@ export default function App() {
         <LinkMeta />
       <body>
       <div ref={divBackground} className="main-content">
-        <Header navInfo={navData} />
+        <Header />
         <div className="second-content">
           <div className="intro">
             <h1>Hi There !</h1>

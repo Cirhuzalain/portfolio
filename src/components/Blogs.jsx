@@ -6,14 +6,12 @@ import pageDetailData from "../utils.jsx";
 
 export default function Blogs(){
 
-    const navData = useRef(null);
-
     return (
         <>
             <html lang="en">
                 <LinkMeta />
             <body>
-            <Header navInfo={navData} />
+            <Header />
                 <div className="section-content">
                     <div className="blog-content card">
                         {

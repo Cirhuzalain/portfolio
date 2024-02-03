@@ -5,14 +5,12 @@ import Footer from "./Footer.jsx";
 
 export default function Quotes(){
 
-    const navData = useRef(null);
-
     return (
         <>
              <html lang="en">
                 <LinkMeta />
             <body>
-            <Header navInfo={navData} />
+            <Header />
                 <div className="section-content">
                     <div className="quotes-content card">
                         <p>

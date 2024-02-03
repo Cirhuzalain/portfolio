@@ -12,14 +12,14 @@
     "express": "^4.18.2",
     "html-react-parser": "^5.0.11",
     "react": "18.2.0",
-    "react-bootstrap": "^1.5.2",
+    "react-bootstrap": "^2.9.2",
     "react-dom": "18.2.0",
-    "react-scripts": "^2.1.3",
+    "react-scripts": "^5.0.1",
     "react-tsparticles": "^1.38.0"
   },
   "scripts": {
-    "build:client": "esbuild src/index.js --bundle --outfile=build/bundle.js --loader:.js=jsx  --loader:.jpeg=dataurl --loader:.webp=dataurl --loader:.html=dataurl --loader:.svg=dataurl",
-    "build:server": "esbuild backend/server.jsx --bundle --outfile=build/server.js --platform=node  --loader:.jpeg=dataurl --loader:.webp=dataurl --loader:.html=dataurl --loader:.svg=dataurl",
+    "build:client": "esbuild src/index.js --bundle --outfile=build/bundle.js --loader:.js=jsx  --loader:.jpeg=dataurl --loader:.webp=dataurl --loader:.html=dataurl --loader:.svg=dataurl --format=iife --minify=true",
+    "build:server": "esbuild backend/server.jsx --bundle --outfile=build/server.js --platform=node  --loader:.jpeg=dataurl --loader:.webp=dataurl --loader:.html=dataurl --loader:.svg=dataurl --format=iife --minify=true",
     "build": "npm run build:client && npm run build:server",
     "start": "node build/server.js"
   },
