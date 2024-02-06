@@ -1,7 +1,7 @@
 import React from "react";
 import {hydrateRoot} from "react-dom/client"
 import "./index.css";
-import App from "./App";
+import App from "./App.jsx";
 import Blogs from "../src/components/Blogs.jsx";
 import Quotes from "../src/components/Quotes.jsx";
 import BlogDetail from "../src/components/BlogDetail.jsx";
