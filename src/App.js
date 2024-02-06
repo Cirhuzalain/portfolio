@@ -16,9 +16,9 @@ import eleven from "./img/11.webp";
 import avatar from "./img/alain.jpeg";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import Card from "./components/ProjectCard";
 import Cards from "./components/Card.js";
 import CardAvatar from "./components/CardAvatar.js";
+import ProjectDetails from "./components/ProjectDetails.js";
 import CardBody from "./components/CardBody.js";
 import ReactGA from "react-ga";
 
@@ -181,7 +181,7 @@ class App extends Component {
           <div className="intro">
             <h1>Hi There !</h1>
             <h1>I&apos;m Alain</h1>
-            <h2>Engineer | LifeLong Learner</h2>
+            <h2>Software Engineer | LifeLong Learner</h2>
           </div>
             <Particles
               width="100vw"
@@ -263,15 +263,14 @@ class App extends Component {
                     </CardAvatar>
                     <CardBody profile>
                       <p className="text-muted">
-                      Alain is an engineer with strong passion and interest for Machine Learning more broadly 
+                      Alain is a software engineer with strong passion and interest for Machine Learning more broadly 
                       and Natural Language Understanding more specifically, its broader applications to have societal impact
-                      in the realm of questions pertaining to awareness, adaptation, robustness and monitoring (A2RM). 
-                      He previously completed his M.Sc. in Machine Learning at the African Master's in Machine Intelligence 
-                      (<a href="https://aimsammi.org/" rel="noreferrer noopener" target="_blank">AIMS-AMMI</a>).  
+                      in the realm of questions pertaining to awareness, adaptation, robustness, fairness and monitoring (A2RM | MA2RF). 
+                      He previously spent some time at <a href="https://aimsammi.org/" rel="noreferrer noopener" target="_blank">AIMS</a> thinking about the foundation of Machine Intelligence.
                       He has extensively worked on several projects
                       including but not limited to designing, implementing and
                       deploying web / mobile applications. Throughout his career, he
-                      has worked with Python, Java, Golang and Javascript based framework.
+                      has worked with Python, Golang, Rust, C++, Java and Javascript based framework.
                       More recently, he started experimenting with training and evaluating 
                       the properties of the representation learned by deep networks.
                       </p>
@@ -287,71 +286,8 @@ class App extends Component {
             <h3 className="section-subheading">Projects</h3>
             <div className="container">
             <div className="row">
-                <Card
-                  data={{
-                    link: "https://github.com/Cirhuzalain/cdsdataset",
-                    title: "Multilingual news dataset",
-                    desc:
-                      "Retrieved and scraped over 1000000 web links from RFI, BBC, VOA and DW using Requests, BeautifulSoup and Stem",
-                    icon: "fa-newspaper",
-                    n: 3
-                  }}
-                />
-                <Card
-                  data={{
-                    link: "https://github.com/Cirhuzalain/Languagemodel",
-                    title: "Language Model",
-                    desc:
-                      "Generate realistic text from news article using a Reccurent Neural Network (RNN)",
-                    icon: "fa-language",
-                    n: 3
-                  }}
-                />
-                <Card
-                  data={{
-                    link: "https://github.com/Cirhuzalain/Word2vec",
-                    title: "Word2vec",
-                    desc:
-                      "Trained a word2vec model with skipgram and negative sampling using the news dataset",
-                    icon: "fa-project-diagram",
-                    n: 3
-                  }}
-                />
-              </div>
-              <div className="row row-second">
-                <Card
-                  data={{
-                    link: "https://github.com/Cirhuzalain/BikeSharePatterns",
-                    title: "Bikeshare Prediction",
-                    desc:
-                      "Predicting bikeshare patterns using a Feed Forward Neural Network (FFNN)",
-                    icon: "fa-bicycle",
-                    n: 3
-                  }}
-                />
-                <Card
-                  data={{
-                    link:
-                      "https://github.com/Cirhuzalain/SkinCancer",
-                    title: "Skin Cancer Analysis",
-                    desc:
-                      "Classify different categories of skin cancer using a residual Network",
-                    icon: "fa-allergies",
-                    n: 3
-                  }}
-                />
-                <Card
-                  data={{
-                    link: "https://github.com/Cirhuzalain/GenerateFaces",
-                    title: "Generate faces",
-                    desc:
-                      "Generate realistic faces and handwritten digits using a Deep Convolution Generative Adversarial Network (DCGAN)",
-                    icon: "fa-user",
-                    n: 3
-                  }}
-                />
-              </div>
-              
+                <ProjectDetails />
+            </div>
             </div>
           </section>
         </section>
@@ -402,7 +338,7 @@ class App extends Component {
         </section>
         <footer className="page-footer font-small blue">
           <div className="footer-copyright text-center py-3">
-            © 2022 McAlino
+            © 2023 McAlino
           </div>
         </footer>
       </div>

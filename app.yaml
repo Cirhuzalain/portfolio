@@ -12,14 +12,6 @@
 # limitations under the License.
 
 # [START app_yaml]
-runtime: nodejs14
-handlers:
-  - url: /
-    static_files: build/index.html
-    upload: build/index.html
-    secure: always
-
-  - url: /
-    static_dir: build
+runtime: nodejs20
 
 # [END app_yaml]
