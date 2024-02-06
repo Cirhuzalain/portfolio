@@ -46,6 +46,11 @@ export default function App() {
             counter += 1;
         }, 5000);
         window.addEventListener("scroll", handleScroll);
+        document.getElementsByTagName("canvas")[0]
+                 .setAttribute(
+                    "style",
+                    "width: 100% !important; height: 100% !important; position: relative !important; z-index: 0 !important; top: 0px !important; left: 0px !important; pointer-events: none;"
+                 );
         return () => {
           window.removeEventListener("scroll", handleScroll);
         }
