@@ -10,13 +10,16 @@ After cloning the project use `cd Website`
 ## Install Dependencies
 Use `npm install` command
 
+## Run ESBuild
+Use `npm run build` command
+
 ## Run the project
 Use `npm start` command
 
 ## Built with
 * ReactJS
 * React Bootstrap
-* React GA
 * Particles JS
 * Nodejs
+* ExpressJs
 * NPM
