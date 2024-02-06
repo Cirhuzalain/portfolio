@@ -279,7 +279,7 @@ export default function App() {
               </div>
             </div>
           </div>
-          
+
           <section id="projects">
             <h2 className="section-heading">Projects</h2>
             <div className="container">
