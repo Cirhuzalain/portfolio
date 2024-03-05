@@ -7509,59 +7509,27 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=7f1f2b64-f042-4882-8ec6-ac6a9c2d2cee">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=16dbe1a9-5934-4acb-95fc-73cbf0cfc719">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
-</pre></div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>A traditional paradigm for training machine learning models is to minimize the average loss for a given training set, with a main objective of acheiving a high accuracy on a test set that came from the same probability distribution with the previously given training set. These models can be accurate in the average case but perform powerly when their are tested in the worst case scenarios. They rely on spurious correlations (i.e milseading heuristics that work for most training examples but do not always hold). Various models that learn these correlations can be accurate on average on an i.i.d test set but provide high errors on group of data where the correlations are violated.</p>
+<p>Models are trained in worst case scenario over group of training data to help in alleviating theses spurious correlations. The previously mentionned training procedure can be seen as an instance of Distributionally Robust Optimization (DRO), which optimizes for the worst-case loss over potential test distributions. Previous work on DRO has focused on models that cannot approach zero training loss such as generative models or convex predictive models with limited capacity. The isssue with directly optimizing with DRO to overparameterized models is that if a model acheives zero training loss then it is optimal on both worst-case (DRO) and the average  training objectives. When we are in the vanishing training loss regime, model trained with DRO performed similarly to the one trained on average with Empirical Risk minimization, both models have hight average test accuracies and worst-group training accuracies but low worst-group test accuracies, the generalization gap is small on average but large for the worst group. For models that are strongly regularized with DRO, when they do not attain vanishing training loss, they can perform better than regularized and unregularized ERM models. Several tips and tricks are applied to acheive the aformentioned result (i.e l2 penalties, early stopping and group adjustement that minimize a risk measure wich accounts for the differences in generalization gap between groups)[1].</p>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=f412a4d7-7c72-4222-b6b1-5841c3cb667c">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6d863789-de1c-488e-9e67-d389cdf24760">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=929ee828-73d4-49bd-a195-09dfb9eaf1bd">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=fd5a0883-8bd7-42c1-84f5-19e57069484a">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>A key assumption within several framework such as domain generalization is that the training data is available in domains and distribution at test time will represent new domains. To create training domains in practice is generally achieved by using meta-data which exists for commonly used datasets. This domain assumption is applicable for a wide range of realistic distributions shift problems.</p>
+<p>Previous benchmark for domain generalization and similar settings are center around invarinaces (i.e in these benchmark there is a consistent input-output relationship across all domains anf the main goal is to learn this relationship while dismissing the spurious correlation within the domains). Previous method aim for generalization to shifts by discovering this relationship, through various techniques such as robust optimization and invariant feature space. These methods are preferable in that they make minimal assumptions about the information provided at test time, in paticular they don't require test labels and the learned model can be immediately applied to predict a single point. These method have limitation pertaining to dealing with problems where input-output relationship varies accross domains[2].</p>
 </div>
 </div>
 </div>
