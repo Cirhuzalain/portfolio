@@ -7494,7 +7494,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>In this blogpost we will highlight several steps we took to create a high quality cross-lingual dataset for document summarization in multi lingual setting. Firstly we'll present how to extract document summary pair from web pages. Additionally we'll create cross-lingual target from the monolingual summary leveraging the forward transaltion operation. Lastly we'll make the dataset publicly available for everyone.</p>
+<p>In this blog post, we will highlight several steps we took to create a high-quality cross-lingual dataset for document summarization in multi-lingual settings. Firstly we'll present how to extract document summary pairs from web pages. Additionally, we'll create a cross-lingual target from the monolingual summary leveraging the forward transition operation. Lastly, we'll make the dataset publicly available for everyone.</p>
 </div>
 </div>
 </div>
@@ -7516,7 +7516,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>For the past few years, several methods have leveraged the huge amount of data available on the web to acquire monolingual corpus in English [1, 2]. In this work we scraped websites from four major news publishers (RFI, BBC, DW &amp; VOA). We start with a seeding link obtained from the Common Crawl repository containing links dating over a decade (from 2008 to 2020). We then analyzed the in memory representation of these web pages and create key identifiers that can be use to retrieve document summary pairs efficiently. In addition to this, we parallelized the final document’s retrieval operation by using the tor network. Furthermore, we removed duplicate, short documents and create a multilingual dataset of around 500 000 documents in English, French and Swahili containing articles professionally written by the main news article’s author. Finally, we performed a group by language operation that maps all documents from their respective publisher website in the previously-mentioned languages. The following figure and table give a holistic view of the prior-mentioned dataset.</p>
+<p>For the past few years, several methods have leveraged the huge amount of data available on the web to acquire monolingual corpus in English [1, 2]. In this work, we scraped websites from four major news publishers (RFI, BBC, DW &amp; VOA). We start with a seeding link obtained from the Common Crawl repository containing links dating over a decade (from 2008 to 2020). We then analyzed the in-memory representation of these web pages and created key identifiers that can be used to retrieve document summary pairs efficiently. In addition to this, we parallelized the final document’s retrieval operation by using the tor network. Furthermore, we removed duplicate, short documents and created a multilingual dataset of around 500,000 documents in English, French, and Swahili containing articles professionally written by the main news article’s author. Finally, we performed a group-by-language operation that maps all documents from their respective publisher website in the previously mentioned languages. The following figure and table give a holistic view of the prior-mentioned dataset.</p>
 </div>
 </div>
 </div>
@@ -7714,7 +7714,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Given the challenging nature of acquiring cross-lingual  dataset due to the discrepancy in the source and target languages. Inspired by [3] work, we utilized the forward translation as a method for acquiring cross-lingual target from the previously gathered multilingual dataset. We leveraged existing models (<a href="https://huggingface.co/Helsinki-NLP">https://huggingface.co/Helsinki-NLP</a>) (models : opus-mt- en-fr, en-swc, fr-en, fr-swc, swc-en, swc-fr)}  available in the transformer library [4] as machine translation service to construct a final cross-lingual dataset by relying on the forward translation to acquire the corresponding cross-lingual target for the source document. The monolingual target is translated by the aforementioned models from one language to another (forward translation). The following figure depicts the forward translation operation.</p>
+<p>Given the challenging nature of acquiring cross-lingual  datasets due to the discrepancy in the source and target languages. Inspired by [3] work, we utilized the forward translation as a method for acquiring cross-lingual targets from the previously gathered multilingual dataset. We leveraged existing models (<a href="https://huggingface.co/Helsinki-NLP">https://huggingface.co/Helsinki-NLP</a>) (models: opus-mt- en-fr, en-swc, fr-en, fr-swc, swc-en, swc-fr)}  available in the transformer library [4] as machine translation service to construct a final cross-lingual dataset by relying on the forward translation to acquire the corresponding cross-lingual target for the source document. The monolingual target is translated by the aforementioned models from one language to another (forward translation). The following figure depicts the forward translation operation.</p>
 </div>
 </div>
 </div>
@@ -7763,7 +7763,7 @@ The monolingual target is translated from one language to another by leveraging 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>We have used the forward translation operation for most of our datasets. However due to the fact that current machine translation system may behave poorly for some examples, We can extend the previously-mentioned operation with a back translation whereby the CDS reference is translated back to the same language as a monolingual target. The combination of these two operations is known as round-trip translation (RRT). The back translation is quintessential to do a filtering operation by leveraging the ROUGE[5] score between the round-trip translated reference and the monolingual target reference. In our truncated experiment given the context, the result with and without this filtering were on par for the Swahili source document. Further  investigation may be needed to ascertain the use of that operation in the complete RRT for the French and English source document.</p>
+<p>We have used the forward translation operation for most of our datasets. However, because current machine translation system may behave poorly for some examples, We can extend the previously-mentioned operation with a back translation whereby the CDS reference is translated back to the same language as a monolingual target. The combination of these two operations is known as round-trip translation (RRT). The back translation is quintessential to doing a filtering operation by leveraging the ROUGE[5] score between the round-trip translated reference and the monolingual target reference. In our truncated experiment given the context, the results with and without this filtering were on par for the Swahili source document. Further  investigation may be needed to ascertain the use of that operation in the complete RRT for the French and English source documents.</p>
 </div>
 </div>
 </div>
@@ -7785,7 +7785,7 @@ The monolingual target is translated from one language to another by leveraging 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>We have gone through several steps required to create a cross-lingual dataset for document summarization, we start with the curation of a monolingual corpus from webpages then leverage a machine translation model to acquire a cross-lingual target from a monolingual summary. The dataset is available at the following <a href="https://drive.google.com/drive/folders/1-vp--VxBwG4-1oDz43BVxM88khCD6F20">link</a>.</p>
+<p>We have gone through several steps required to create a cross-lingual dataset for document summarization, we start with the curation of a monolingual corpus from webpages then leverage a machine translation model to acquire a cross-lingual target from a monolingual summary.</p>
 </div>
 </div>
 </div>
