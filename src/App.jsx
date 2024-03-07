@@ -37,20 +37,24 @@ export default function App() {
   let counter = 0; // Maybe useState
   let divBackground = useRef(null);
 
+  updateCanvasStyle = () => {
+    document.getElementsByTagName("canvas")[0]
+        .setAttribute(
+            "style",
+            "width: 100% !important; height: 100% !important; position: relative !important; z-index: 0 !important; top: 0px !important; left: 0px !important; pointer-events: none;"
+        );
+  }
+
   useEffect(() => {
         setInterval(function() {
             divBackground.current.style.backgroundImage = `url(${
                     bgLists[counter % bgLists.length]
             })`;
-
             counter += 1;
+            updateCanvasStyle();
         }, 5000);
         window.addEventListener("scroll", handleScroll);
-        document.getElementsByTagName("canvas")[0]
-                 .setAttribute(
-                    "style",
-                    "width: 100% !important; height: 100% !important; position: relative !important; z-index: 0 !important; top: 0px !important; left: 0px !important; pointer-events: none;"
-                 );
+        updateCanvasStyle();
         return () => {
           window.removeEventListener("scroll", handleScroll);
         }
